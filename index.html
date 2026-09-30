@@ -1865,180 +1865,9 @@ h1 {
 
 
 /* =====================================================
-   MORNING NOTE POPUP
+   PREMIUM FULL-SCREEN MORNING NOTE
 ===================================================== */
-.morning-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: rgba(8, 10, 25, .78);
-    backdrop-filter: blur(12px);
-    opacity: 1;
-    transition: opacity .35s ease;
-}
-
-.morning-overlay.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.morning-card {
-    position: relative;
-    width: min(100%, 440px);
-    padding: 38px 28px 30px;
-    border-radius: 34px;
-    text-align: center;
-    overflow: hidden;
-    background: linear-gradient(145deg, rgba(255, 188, 205, .28), rgba(75, 50, 110, .58));
-    border: 1px solid rgba(255,255,255,.24);
-    box-shadow: 0 30px 100px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.16);
-    animation: morningNoteAppear .65s cubic-bezier(.2,.8,.2,1);
-}
-
-.morning-card::before {
-    content: "";
-    position: absolute;
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-    left: -90px;
-    top: -100px;
-    background: rgba(255, 180, 200, .16);
-    filter: blur(8px);
-}
-
-.morning-card::after {
-    content: "";
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    right: -70px;
-    bottom: -80px;
-    background: rgba(180, 150, 255, .13);
-    filter: blur(8px);
-}
-
-@keyframes morningNoteAppear {
-    0% { opacity: 0; transform: translateY(35px) scale(.82) rotate(-2deg); }
-    65% { opacity: 1; transform: translateY(-5px) scale(1.02) rotate(.5deg); }
-    100% { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
-}
-
-.morning-envelope {
-    position: relative;
-    z-index: 2;
-    width: 76px;
-    height: 76px;
-    margin: 0 auto 17px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(255,255,255,.14);
-    border: 1px solid rgba(255,255,255,.2);
-    font-size: 40px;
-    box-shadow: 0 10px 35px rgba(0,0,0,.2);
-    animation: envelopeFloat 2s ease-in-out infinite alternate;
-}
-
-@keyframes envelopeFloat {
-    from { transform: translateY(0) rotate(-3deg); }
-    to { transform: translateY(-7px) rotate(3deg); }
-}
-
-.morning-kicker {
-    position: relative;
-    z-index: 2;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: .7;
-    margin-bottom: 9px;
-}
-
-.morning-title {
-    position: relative;
-    z-index: 2;
-    font-size: 29px;
-    margin-bottom: 18px;
-}
-
-.morning-message {
-    position: relative;
-    z-index: 2;
-    min-height: 105px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px 20px;
-    border-radius: 24px;
-    background: rgba(255,255,255,.10);
-    border: 1px solid rgba(255,255,255,.15);
-    font-size: 17px;
-    line-height: 1.65;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-    animation: messageFade .45s ease;
-}
-
-@keyframes messageFade {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.morning-date {
-    position: relative;
-    z-index: 2;
-    margin-top: 15px;
-    font-size: 12px;
-    opacity: .58;
-}
-
-.morning-close {
-    position: relative;
-    z-index: 2;
-    margin-top: 22px;
-    padding: 12px 28px;
-    border-radius: 25px;
-    border: 1px solid rgba(255,255,255,.2);
-    background: rgba(255,255,255,.12);
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    transition: transform .25s ease, background .25s ease;
-}
-
-.morning-close:hover {
-    transform: translateY(-3px);
-    background: rgba(255,255,255,.18);
-}
-
-.morning-particle {
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-    font-size: 18px;
-    animation: morningParticle 1.8s ease-out forwards;
-}
-
-@keyframes morningParticle {
-    0% { opacity: 0; transform: translate(0,0) scale(.4) rotate(0); }
-    15% { opacity: 1; }
-    100% { opacity: 0; transform: translate(var(--px), var(--py)) scale(1.2) rotate(var(--rot)); }
-}
-
-@media (max-width:520px) {
-    .morning-card {
-        padding: 32px 18px 25px;
-        border-radius: 29px;
-    }
-    .morning-title { font-size: 25px; }
-    .morning-message { font-size: 15px; padding: 21px 15px; min-height: 120px; }
-}
+.morning-overlay{position:fixed;inset:0;z-index:100000;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0;background:radial-gradient(circle at 50% 15%,rgba(255,220,181,.28),transparent 30%),radial-gradient(circle at 15% 85%,rgba(255,112,177,.16),transparent 34%),linear-gradient(145deg,#13070e 0%,#35121f 42%,#542438 72%,#100a14 100%);backdrop-filter:blur(12px);opacity:1;transition:opacity .45s ease}.morning-overlay.hidden{opacity:0;pointer-events:none}.morning-overlay::before{content:"";position:absolute;width:min(72vw,680px);height:min(72vw,680px);top:-27%;left:50%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,221,178,.27),rgba(255,166,191,.08) 42%,transparent 70%);filter:blur(8px);animation:morningSunGlow 6s ease-in-out infinite alternate;pointer-events:none}.morning-overlay::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(255,100,164,.14),transparent 48%);pointer-events:none}.morning-card{position:relative;z-index:5;width:min(850px,90vw);max-width:850px;padding:30px 25px;margin:0;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;text-align:center;animation:premiumMorningIn .9s cubic-bezier(.16,1,.3,1)}.morning-card::before,.morning-card::after{display:none}@keyframes morningSunGlow{from{transform:translateX(-50%) scale(.94);opacity:.65}to{transform:translateX(-50%) scale(1.08);opacity:1}}@keyframes premiumMorningIn{from{opacity:0;transform:translateY(35px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}.morning-envelope{position:relative;z-index:2;width:78px;height:78px;margin:0 auto 25px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle,rgba(255,190,215,.25),rgba(255,132,177,.08));border:1px solid rgba(255,220,232,.22);font-size:31px;box-shadow:0 0 35px rgba(255,104,164,.16),inset 0 0 25px rgba(255,255,255,.06);animation:envelopeFloat 2.5s ease-in-out infinite alternate}.morning-kicker{position:relative;z-index:2;margin-bottom:13px;color:rgba(255,219,232,.68);font-size:10px;letter-spacing:4px;text-transform:uppercase}.morning-title{position:relative;z-index:2;margin:0 auto 27px;color:#fff5f9;font-family:Georgia,"Times New Roman",serif;font-size:clamp(34px,6vw,62px);font-weight:500;line-height:1.08;letter-spacing:-1px;text-shadow:0 0 18px rgba(255,192,216,.25),0 5px 30px rgba(0,0,0,.25)}.morning-message{position:relative;z-index:2;width:min(680px,90vw);min-height:auto;margin:0 auto;padding:0;display:block;color:rgba(255,244,248,.94);background:transparent;border:0;box-shadow:none;font-size:clamp(16px,2.2vw,21px);line-height:1.9;letter-spacing:.15px;animation:messageFade .45s ease}.morning-date{position:relative;z-index:2;margin-top:28px;color:rgba(255,211,226,.56);font-size:11px;letter-spacing:2px}.morning-close{position:relative;z-index:2;margin-top:42px;padding:13px 25px;border:1px solid rgba(255,210,228,.22);border-radius:40px;background:rgba(255,255,255,.045);color:rgba(255,235,243,.82);font-size:12px;letter-spacing:.5px;cursor:pointer;backdrop-filter:blur(10px);transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease}.morning-close:hover{transform:translateY(-2px);background:rgba(255,255,255,.09);border-color:rgba(255,210,228,.4);box-shadow:0 8px 30px rgba(255,100,160,.12)}.morning-particle{position:absolute;z-index:4;pointer-events:none;font-size:18px;animation:morningParticle 1.8s ease-out forwards}@keyframes morningParticle{0%{opacity:0;transform:translate(0,0) scale(.4) rotate(0)}15%{opacity:1}100%{opacity:0;transform:translate(var(--px),var(--py)) scale(1.2) rotate(var(--rot))}}@keyframes messageFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@keyframes envelopeFloat{from{transform:translateY(0) rotate(-3deg)}to{transform:translateY(-7px) rotate(3deg)}}@media(max-width:520px){.morning-card{width:92vw;padding:24px 10px}.morning-title{font-size:32px}.morning-message{font-size:16px;line-height:1.75}.morning-envelope{width:68px;height:68px;font-size:27px}}
 
 </style>
 
@@ -3097,10 +2926,611 @@ button, input, textarea, select { max-width: 100%; }
 }
 </style>
 
+
+<style id="birthdayLetterMatchingTheme">
+/* =========================================================
+   BIRTHDAY LETTER OPENING — MATCH SCREEN 1 + SCREEN 2
+   Warm cream / champagne / dusty-rose theme; no dark Letters-card background.
+========================================================= */
+.birthday-letter-opening{
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255,255,255,.86), transparent 26%),
+    radial-gradient(circle at 14% 82%, rgba(216,184,143,.17), transparent 28%),
+    radial-gradient(circle at 86% 72%, rgba(223,178,160,.15), transparent 30%),
+    linear-gradient(135deg,#fffaf2 0%,#f7eee2 48%,#fff9f1 100%) !important;
+}
+.birthday-letter-opening::before,
+.birthday-letter-opening::after{
+  color:rgba(126,80,86,.30);
+  text-shadow:0 0 16px rgba(190,149,102,.24);
+}
+.birthday-letter-opening::before{content:"♡";}
+.birthday-letter-opening::after{content:"♡";}
+
+.birthday-letter-opening .opening-envelope{
+  filter:drop-shadow(0 28px 52px rgba(105,73,55,.22));
+}
+
+.birthday-letter-opening .opening-envelope-body{
+  border:1px solid rgba(169,126,78,.28);
+  border-radius:18px;
+  background:
+    linear-gradient(145deg,rgba(255,248,235,.94),rgba(232,207,173,.88)),
+    #f5e8d4;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.95),
+    0 0 38px rgba(169,126,78,.10);
+}
+
+.birthday-letter-opening .opening-envelope-body::before,
+.birthday-letter-opening .opening-envelope-body::after{
+  background:rgba(157,113,73,.24);
+}
+
+.birthday-letter-opening .opening-paper{
+  background:linear-gradient(145deg,#fffdf8 0%,#f8eee1 100%);
+  box-shadow:0 14px 30px rgba(104,73,58,.18),inset 0 1px 0 rgba(255,255,255,.98);
+}
+
+.birthday-letter-opening .opening-paper::before{
+  content:"♡";
+  color:rgba(183,95,114,.42);
+}
+
+.birthday-letter-opening .opening-flap{
+  background:linear-gradient(180deg,rgba(255,250,240,.98),rgba(224,193,151,.86));
+  border:1px solid rgba(169,126,78,.28);
+}
+
+.birthday-letter-opening .opening-seal{
+  background:radial-gradient(circle at 35% 30%,#e3b3a4,#ad6870 70%);
+  color:#fffaf5;
+  box-shadow:0 8px 24px rgba(106,72,59,.20),0 0 24px rgba(190,149,102,.18);
+}
+
+/* Keep the final birthday letter page visually continuous with the opening. */
+.birthday-letter-result{
+  background:
+    radial-gradient(circle at 50% 19%,rgba(255,255,255,.86),transparent 25%),
+    radial-gradient(circle at 18% 82%,rgba(216,184,143,.17),transparent 27%),
+    radial-gradient(circle at 82% 73%,rgba(223,178,160,.15),transparent 29%),
+    linear-gradient(135deg,#fffaf2 0%,#f7eee2 48%,#fff9f1 100%) !important;
+}
+.birthday-letter-result::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.30;
+  background:
+    linear-gradient(rgba(130,91,58,.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(130,91,58,.022) 1px,transparent 1px);
+  background-size:34px 34px;
+}
+</style>
+
+
+
+<!-- =====================================================
+     OUR WORLD — PRIVATE PASSWORD GATE
+===================================================== -->
+<style id="ourWorldPasswordGateStyles">
+    #ourWorldPasswordGate {
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        isolation: isolate;
+        background:
+            radial-gradient(circle at 18% 15%, rgba(183, 124, 170, .18), transparent 28%),
+            radial-gradient(circle at 84% 78%, rgba(113, 85, 173, .16), transparent 30%),
+            radial-gradient(circle at 50% 40%, rgba(255, 190, 220, .05), transparent 34%),
+            linear-gradient(145deg, #04050c 0%, #0b0b18 48%, #130d1d 100%);
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .75s ease, visibility .75s ease;
+    }
+
+    #ourWorldPasswordGate.is-unlocked {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .ow-gate-stars,
+    .ow-gate-hearts,
+    .ow-gate-sparkles {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .ow-gate-stars::before,
+    .ow-gate-stars::after {
+        content: "";
+        position: absolute;
+        inset: -20%;
+        background-image:
+            radial-gradient(circle, rgba(255,255,255,.8) 0 1px, transparent 1.7px),
+            radial-gradient(circle, rgba(255,217,236,.5) 0 1px, transparent 1.8px);
+        background-size: 85px 85px, 125px 125px;
+        background-position: 8px 15px, 38px 72px;
+        opacity: .45;
+        animation: owGateStarDrift 18s linear infinite;
+    }
+
+    .ow-gate-stars::after {
+        transform: rotate(8deg) scale(1.15);
+        opacity: .23;
+        animation-duration: 25s;
+        animation-direction: reverse;
+    }
+
+    .ow-gate-glow {
+        position: absolute;
+        width: 58vmax;
+        height: 58vmax;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 177, 211, .13), rgba(167, 112, 187, .06) 38%, transparent 68%);
+        filter: blur(12px);
+        animation: owGateGlowPulse 6s ease-in-out infinite;
+    }
+
+    .ow-gate-heart {
+        position: absolute;
+        bottom: -12vh;
+        color: rgba(255, 221, 237, .48);
+        font-family: Georgia, serif;
+        font-size: clamp(14px, 2.1vw, 25px);
+        white-space: nowrap;
+        text-shadow: 0 0 16px rgba(255, 164, 207, .24), 0 0 28px rgba(190, 137, 255, .10);
+        animation: owGateHeartFall linear infinite;
+        user-select: none;
+        will-change: transform, opacity;
+    }
+
+    .ow-gate-sparkle {
+        position: absolute;
+        width: var(--size, 4px);
+        height: var(--size, 4px);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, .9);
+        box-shadow:
+            0 0 5px rgba(255,255,255,.8),
+            0 0 12px rgba(255, 193, 224, .55),
+            0 0 22px rgba(191, 142, 255, .32);
+        opacity: 0;
+        animation: owGateSparkle var(--duration, 2.8s) ease-in-out infinite;
+        animation-delay: var(--delay, 0s);
+    }
+
+    .ow-gate-sparkle::before,
+    .ow-gate-sparkle::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 1px;
+        height: 180%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(transparent, rgba(255,255,255,.9), transparent);
+    }
+
+    .ow-gate-sparkle::after {
+        width: 180%;
+        height: 1px;
+    }
+
+    .ow-gate-panel {
+        position: relative;
+        z-index: 5;
+        width: min(92vw, 440px);
+        padding: clamp(32px, 7vw, 54px) clamp(24px, 6vw, 46px) clamp(28px, 6vw, 42px);
+        border: 1px solid rgba(255,255,255,.16);
+        border-radius: 30px;
+        background: linear-gradient(145deg, rgba(255,255,255,.095), rgba(255,255,255,.035));
+        backdrop-filter: blur(24px) saturate(125%);
+        -webkit-backdrop-filter: blur(24px) saturate(125%);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,.14),
+            0 30px 80px rgba(0,0,0,.45),
+            0 0 50px rgba(170, 104, 166, .08);
+        text-align: center;
+    }
+
+    .ow-gate-panel::before {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        border-radius: 29px;
+        background: linear-gradient(120deg, rgba(255,255,255,.08), transparent 35%, transparent 65%, rgba(255,188,220,.045));
+        pointer-events: none;
+    }
+
+    .ow-gate-kicker {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 11px;
+        color: rgba(255, 221, 238, .65);
+        font: 600 10px/1.2 Arial, Helvetica, sans-serif;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    .ow-gate-title {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        color: #fff7fb;
+        font: 500 clamp(31px, 8vw, 48px)/1.05 Georgia, "Times New Roman", serif;
+        letter-spacing: -.4px;
+        text-shadow: 0 0 24px rgba(255, 187, 216, .11);
+    }
+
+    .ow-gate-title span {
+        color: #f7bfd7;
+    }
+
+    .ow-gate-subtitle {
+        position: relative;
+        z-index: 2;
+        margin: 13px auto 26px;
+        max-width: 320px;
+        color: rgba(255,241,248,.72);
+        font: 400 13px/1.65 Arial, Helvetica, sans-serif;
+    }
+
+    .ow-gate-hint {
+        position: relative;
+        z-index: 2;
+        margin: 0 0 17px;
+        color: rgba(255,226,239,.7);
+        font: 400 12px/1.55 Arial, Helvetica, sans-serif;
+    }
+
+    .ow-gate-hint strong {
+        display: block;
+        margin-top: 4px;
+        color: #ffd0e3;
+        font-weight: 600;
+        letter-spacing: .25px;
+    }
+
+    .ow-gate-input-wrap {
+        position: relative;
+        z-index: 2;
+    }
+
+    .ow-gate-input {
+        width: 100%;
+        height: 58px;
+        padding: 0 18px;
+        border: 1px solid rgba(255,255,255,.18);
+        border-radius: 17px;
+        outline: none;
+        background: rgba(255,255,255,.075);
+        color: #fff;
+        text-align: center;
+        font: 600 21px/1 Arial, Helvetica, sans-serif;
+        letter-spacing: 8px;
+        caret-color: #ffc5de;
+        transition: border-color .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+    .ow-gate-input::placeholder {
+        color: rgba(255,255,255,.35);
+        letter-spacing: 4px;
+        font-size: 12px;
+    }
+
+    .ow-gate-input:focus {
+        border-color: rgba(255, 192, 220, .42);
+        background: rgba(255,255,255,.1);
+        box-shadow: 0 0 0 4px rgba(255, 177, 210, .06), 0 0 24px rgba(255, 160, 204, .08);
+    }
+
+    .ow-gate-button {
+        width: 100%;
+        min-height: 54px;
+        margin-top: 13px;
+        border: 1px solid rgba(255,255,255,.2);
+        border-radius: 17px;
+        cursor: pointer;
+        color: #fff;
+        background: linear-gradient(135deg, rgba(255,186,216,.2), rgba(174,135,205,.16));
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 10px 26px rgba(0,0,0,.2);
+        font: 600 12px/1 Arial, Helvetica, sans-serif;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+
+    .ow-gate-button:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(135deg, rgba(255,186,216,.27), rgba(174,135,205,.22));
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 14px 34px rgba(0,0,0,.26);
+    }
+
+    .ow-gate-button:active {
+        transform: translateY(0);
+    }
+
+    .ow-gate-message {
+        position: relative;
+        z-index: 2;
+        min-height: 19px;
+        margin-top: 12px;
+        color: rgba(255, 199, 220, .76);
+        font: 400 11px/1.45 Arial, Helvetica, sans-serif;
+        opacity: 0;
+        transition: opacity .2s ease;
+    }
+
+    .ow-gate-message.show {
+        opacity: 1;
+    }
+
+    .ow-gate-message.error {
+        color: #ffb4cf;
+    }
+
+    @keyframes owGateHeartFall {
+        0% {
+            transform: translate3d(0, 0, 0) rotate(-7deg) scale(.85);
+            opacity: 0;
+        }
+        10% { opacity: .62; }
+        50% {
+            transform: translate3d(var(--drift, 30px), 48vh, 0) rotate(6deg) scale(1);
+            opacity: .46;
+        }
+        100% {
+            transform: translate3d(calc(var(--drift, 30px) * -1), 118vh, 0) rotate(-10deg) scale(1.08);
+            opacity: 0;
+        }
+    }
+
+    @keyframes owGateSparkle {
+        0%,100% { opacity: 0; transform: scale(.35); }
+        35% { opacity: .3; transform: scale(.65); }
+        52% { opacity: 1; transform: scale(1); }
+        68% { opacity: .35; transform: scale(.62); }
+    }
+
+    @keyframes owGateGlowPulse {
+        0%,100% { transform: scale(.94); opacity: .65; }
+        50% { transform: scale(1.08); opacity: 1; }
+    }
+
+    @keyframes owGateStarDrift {
+        from { transform: translate3d(0,0,0); }
+        to { transform: translate3d(30px, 18px, 0); }
+    }
+
+    @media (max-width: 560px) {
+        .ow-gate-panel {
+            border-radius: 25px;
+            width: min(91vw, 390px);
+        }
+
+        .ow-gate-input {
+            height: 56px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .ow-gate-heart,
+        .ow-gate-sparkle,
+        .ow-gate-stars::before,
+        .ow-gate-stars::after,
+        .ow-gate-glow {
+            animation: none !important;
+        }
+    }
+</style>
+
+
+<style id="morningEmojiCenterFix">
+/* Pixel-center the Morning Note bubble and 💌 glyph itself. */
+.morning-envelope{
+    position:relative !important;
+    display:block !important;
+    padding:0 !important;
+    text-align:center !important;
+    overflow:visible !important;
+}
+.morning-envelope-emoji{
+    position:absolute !important;
+    left:50% !important;
+    top:50% !important;
+    width:auto !important;
+    height:auto !important;
+    margin:0 !important;
+    padding:0 !important;
+    display:block !important;
+    line-height:1 !important;
+    transform:translate(-50%,-50%) !important;
+    transform-origin:center center !important;
+    text-align:center !important;
+    white-space:nowrap !important;
+    font-family:"Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif !important;
+    font-size:31px !important;
+}
+@media(max-width:520px){
+    .morning-envelope-emoji{font-size:27px !important;}
+}
+</style>
+
+<style id="morningBubbleTrueCenterFix">
+/* Final fix: center the entire Morning Note bubble in the card. */
+.morning-envelope{
+    position:relative !important;
+    left:50% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    transform:translateX(-50%) !important;
+}
+@keyframes morningBubbleFloatCentered{
+    from{ transform:translateX(-50%) translateY(0) rotate(-3deg); }
+    to{ transform:translateX(-50%) translateY(-7px) rotate(3deg); }
+}
+.morning-envelope{ animation:morningBubbleFloatCentered 2.5s ease-in-out infinite alternate !important; }
+.morning-envelope-emoji{
+    position:absolute !important;
+    left:50% !important;
+    top:50% !important;
+    margin:0 !important;
+    transform:translate(-50%,-50%) !important;
+}
+</style>
 </head>
 
 
 <body class="night">
+
+<!-- =====================================================
+     OUR WORLD — PASSWORD GATE
+===================================================== -->
+<div id="ourWorldPasswordGate" aria-hidden="false">
+    <div class="ow-gate-stars" aria-hidden="true"></div>
+    <div class="ow-gate-glow" aria-hidden="true"></div>
+    <div class="ow-gate-hearts" id="owGateHearts" aria-hidden="true"></div>
+    <div class="ow-gate-sparkles" id="owGateSparkles" aria-hidden="true"></div>
+
+    <section class="ow-gate-panel" aria-label="Our World private access">
+        <div class="ow-gate-kicker">A LITTLE PLACE FOR JUST US</div>
+        <h1 class="ow-gate-title">Our World <span>♡</span></h1>
+        <p class="ow-gate-subtitle">
+            This little world is private. Only the two of us get the key.
+        </p>
+
+        <div class="ow-gate-hint">
+            Hint
+            <strong>It’s the date we got together ♡</strong>
+        </div>
+
+        <form id="owPasswordForm" class="ow-gate-input-wrap" autocomplete="off">
+            <input
+                id="owPasswordInput"
+                class="ow-gate-input"
+                type="password"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                maxlength="4"
+                placeholder="••••"
+                aria-label="Our World password"
+                autocomplete="off"
+                enterkeyhint="done"
+                required
+            >
+            <button class="ow-gate-button" type="submit">Enter Our World ♡</button>
+            <div id="owGateMessage" class="ow-gate-message" role="status" aria-live="polite"></div>
+        </form>
+    </section>
+</div>
+
+<script id="ourWorldPasswordGateScript">
+(function () {
+    const PASSWORD = "0416";
+    const gate = document.getElementById("ourWorldPasswordGate");
+    const form = document.getElementById("owPasswordForm");
+    const input = document.getElementById("owPasswordInput");
+    const message = document.getElementById("owGateMessage");
+    const heartsLayer = document.getElementById("owGateHearts");
+    const sparklesLayer = document.getElementById("owGateSparkles");
+
+    if (!gate || !form || !input || !message) return;
+
+    function buildBackground() {
+        const heartPhrases = [
+            "I love you ♡",
+            "I love you nanalu ♡",
+            "I love you cutie ♡",
+            "I love you bangaram ♡",
+            "I love you nanaluuu ♡",
+            "I love you my guy ♡"
+        ];
+
+        for (let i = 0; i < 30; i++) {
+            const heart = document.createElement("span");
+            heart.className = "ow-gate-heart";
+            heart.textContent = heartPhrases[i % heartPhrases.length];
+            heart.style.left = (Math.random() * 104 - 2) + "%";
+            heart.style.setProperty("--drift", ((Math.random() * 90) - 45) + "px");
+            heart.style.fontSize = (12 + Math.random() * 13) + "px";
+            heart.style.animationDuration = (8 + Math.random() * 8) + "s";
+            heart.style.animationDelay = (-Math.random() * 14) + "s";
+            heartsLayer.appendChild(heart);
+        }
+
+        for (let i = 0; i < 180; i++) {
+            const sparkle = document.createElement("span");
+            sparkle.className = "ow-gate-sparkle";
+            sparkle.style.left = Math.random() * 100 + "%";
+            sparkle.style.top = Math.random() * 100 + "%";
+            sparkle.style.setProperty("--size", (1.5 + Math.random() * 4.5) + "px");
+            sparkle.style.setProperty("--duration", (1.8 + Math.random() * 3.6) + "s");
+            sparkle.style.setProperty("--delay", (-Math.random() * 4.5) + "s");
+            sparklesLayer.appendChild(sparkle);
+        }
+    }
+
+    function showMessage(text, isError) {
+        message.textContent = text;
+        message.classList.add("show");
+        message.classList.toggle("error", !!isError);
+    }
+
+    function unlock() {
+        gate.classList.add("is-unlocked");
+        gate.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("our-world-locked");
+        setTimeout(() => gate.remove(), 800);
+    }
+
+    // Always show the private gate when Our World is opened/reloaded.
+    // The password is entered each time so the whole app stays behind the lock screen.
+    buildBackground();
+    document.body.classList.add("our-world-locked");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const value = input.value.trim();
+
+        if (value === PASSWORD) {
+            showMessage("Welcome back, nanalu ♡", false);
+            unlock();
+        } else {
+            showMessage("That’s not our date, cutie ♡", true);
+            input.value = "";
+            input.focus();
+            gate.querySelector(".ow-gate-panel").animate(
+                [
+                    { transform: "translateX(0)" },
+                    { transform: "translateX(-6px)" },
+                    { transform: "translateX(6px)" },
+                    { transform: "translateX(-4px)" },
+                    { transform: "translateX(0)" }
+                ],
+                { duration: 320, easing: "ease-out" }
+            );
+        }
+    });
+
+    input.addEventListener("input", function () {
+        input.value = input.value.replace(/\D/g, "").slice(0, 4);
+        if (message.classList.contains("show")) {
+            message.classList.remove("show");
+        }
+    });
+
+    setTimeout(() => input.focus(), 120);
+})();
+</script>
+
 <!-- =====================================================
      BACKGROUND
 ===================================================== -->
@@ -3347,28 +3777,6 @@ button, input, textarea, select { max-width: 100%; }
 
             </button>
 
-<button class="option-card card-place"
-                    type="button"
-                    onclick="openPlacesWeGo()">
-
-                <div class="shine"></div>
-
-                <span class="extra-heart one">♥</span>
-                <span class="extra-heart two">♥</span>
-                <span class="extra-heart three">♥</span>
-
-                <div class="option-icon">🗺️</div>
-
-                <div class="option-title">
-                    Places We'll Go
-                </div>
-
-                <div class="option-description">
-                    Places for our future
-                </div>
-
-            </button>
-
 <button class="option-card card-future"
                     type="button"
                     onclick="openOurFuture()">
@@ -3387,6 +3795,28 @@ button, input, textarea, select { max-width: 100%; }
 
                 <div class="option-description">
                     Things I dream about with you
+                </div>
+
+            </button>
+
+<button class="option-card card-place wide"
+                    type="button"
+                    onclick="openPlacesWeGo()">
+
+                <div class="shine"></div>
+
+                <span class="extra-heart one">♥</span>
+                <span class="extra-heart two">♥</span>
+                <span class="extra-heart three">♥</span>
+
+                <div class="option-icon">🗺️</div>
+
+                <div class="option-title">
+                    Places We'll Go
+                </div>
+
+                <div class="option-description">
+                    Places for our future
                 </div>
 
             </button>
@@ -3507,7 +3937,6 @@ button, input, textarea, select { max-width: 100%; }
             </div>
         </div>
 
-        <div class="ourdates-help">Tap a heart date to open its little memory ♡</div>
     </div>
 
     <div id="ourDatesSceneView" class="ourdates-scene-view hidden" aria-hidden="true">
@@ -3521,7 +3950,7 @@ button, input, textarea, select { max-width: 100%; }
             <div id="ourDatesSceneIcon" class="ourdates-scene-icon"></div>
             <div id="ourDatesSceneDate" class="ourdates-scene-date"></div>
             <h2 id="ourDatesSceneTitle"></h2>
-            <p id="ourDatesSceneMessage"></p>
+            <p id="ourDatesSceneMessage" class="ourdates-scene-message"></p>
         </div>
     </div>
 </section>
@@ -3604,7 +4033,7 @@ button, input, textarea, select { max-width: 100%; }
 
 @media(max-width:560px){
     .ourdates-topbar,.ourdates-scene-topbar{grid-template-columns:1fr auto}.ourdates-top-title,.ourdates-scene-mini{display:none}
-    .ourdates-heading{margin-top:36px}.ourdates-month-panel{padding:15px 9px 12px;border-radius:24px}.ourdates-grid{grid-auto-rows:41px;gap:5px}.ourdates-weekdays,.ourdates-grid{gap:5px}.ourdates-scene-icon{font-size:58px}.ourdates-scene-center{padding:82px 16px 96px}.ourdates-scene-center h2{font-size:clamp(28px,8vw,43px);margin-bottom:15px}.ourdates-scene-center p{padding:21px 17px;border-radius:24px;font-size:15px;line-height:1.75}.ourdates-scene-date{font-size:11px;letter-spacing:2.5px}
+    .ourdates-heading{margin-top:36px}.ourdates-month-panel{padding:15px 9px 12px;border-radius:24px}.ourdates-grid{grid-auto-rows:41px;gap:5px}.ourdates-weekdays,.ourdates-grid{gap:5px}.ourdates-scene-icon{font-size:58px}.ourdates-scene-center{padding:82px 16px 96px}.ourdates-scene-center h2{font-size:clamp(28px,8vw,43px);margin-bottom:15px}.ourdates-scene-center p{padding:21px 17px;border-radius:24px;font-size:15px;line-height:1.75}.ourdates-scene-date{font-size:11px;letter-spacing:2.5px}.ourdates-scene-center p:empty{display:none}
 }
 </style>
 
@@ -3612,27 +4041,21 @@ button, input, textarea, select { max-width: 100%; }
 const ourDatesScenes = {
     claim: {
         date:'16th APRIL', icon:'💍', title:'The Day I Made You Mine. 😌❤️',
-        message:'Aa roju nenu ninnu naa manasulo complete ga naa vaadini cheskunna. Hehehe… ippudu escape undadhu. ❤️'
     },
     meet: {
         date:'30th APRIL', icon:'👀', title:'Our First Meet ❤️',
-        message:'Aa roju first time mana worlds actually meet ayyayi. Appudu teliyadu… kani ade moment nunchi mana story start ayindi.'
     },
     mybirthday: {
         date:'6th JUNE', icon:'🎂', title:'My Birthday ♡',
-        message:'Ee date naadi… kani naa favourite part enti ante, ippudu naa birthday ni kuda ninnu gurthucheskune roju laga feel avuthundi. ❤️'
     },
     kiss: {
         date:'19th JUNE', icon:'💋', title:'Our First Kiss ❤️',
-        message:'Mana first kiss… chinna moment ayina, naa memory lo maatram permanent place teeskunna. 🥹❤️'
     },
     hug: {
         date:'27th JUNE', icon:'🫂', title:'Our First Hug ❤️',
-        message:'Aa first hug lo unna feeling ippatiki marchipoledu. Konchem time aagipoyina la anipinchindi. 🫂❤️'
     },
     hisbirthday: {
         date:'1st OCTOBER', icon:'🎂', title:'Happy Birthday, Nanaluuuuu ❤️',
-        message:'The day my favourite boy came into this world. Happy 19th birthday, nanaluuuuu. Nee birthday naaku kuda special eh. ❤️'
     }
 };
 
@@ -5081,7 +5504,7 @@ document.addEventListener('keydown',function(event){
 ===================================================== -->
 <div id="morningNoteOverlay" class="morning-overlay hidden" aria-hidden="true">
     <div class="morning-card" role="dialog" aria-modal="true" aria-labelledby="morningNoteTitle">
-        <div class="morning-envelope">💌</div>
+        <div class="morning-envelope"><span class="morning-envelope-emoji">💌</span></div>
         <div class="morning-kicker">A little message from your pellam</div>
         <h2 id="morningNoteTitle" class="morning-title">Morning note for youuu</h2>
         <div id="morningNoteMessage" class="morning-message"></div>
@@ -5592,36 +6015,36 @@ function updateBirthday() {
 updateBirthday();
 
 const morningNotes = [
-    "Good morning nanaluuuuu ❤️ Eeroju kuda happy ga undali, sare na?",
-    "Morning nanaaa ❤️ Baaga nidra pattindha? Ippudu lechi cute ga undu.",
-    "Good morning bangaram 🥹❤️ Eeroju nee day antha super ga undali.",
-    "Morninggg nanaluuuuu 💕 Nuvvu navvuthu unte chaalu, naaku ade happiness.",
-    "Good morning moguduuu 😂❤️ Levu inka? Nee pellam waiting ikkada.",
-    "Morning chinodaaa ❤️ Tinnava? Nuvvu nee health jagrathaga chuskovali.",
-    "Good morning nana 🫶 Eeroju em jarigina, nenu nee pakkane unna ani gurthupettuko.",
-    "Morning bangaram ❤️ Nuvvu happy ga unte naa day automatic ga happy aipothundi.",
-    "Good morning nanaluuuuu 🥺❤️ Nuvvu naaku entha special oo neeku telusa?",
-    "Morning moguda 😂💕 Ippude lechi nee pellam ni miss avvadam start cheyyi.",
-    "Good morning nana ❤️ Eeroju nee face meeda smile permanent ga undali.",
-    "Morninggg bangaram 🫂❤️ Neeku oka big hug pampinchaa, receive chesko.",
-    "Good morning nanaluuuuu 💗 Nuvvu ekkada unna, naa thoughts lo maatram nuvve.",
-    "Morning cutieee ❤️ Baaga work chesko, madhyalo nannu kuda konchem gurthuchesko.",
-    "Good morning husbanduu 😂❤️ Nee pellam nunchi daily attendance vesesa.",
-    "Morning nana 🥹💕 Nuvvu naa life lo undadam naaku chala chala happy ga untundi.",
-    "Good morning bangaram ❤️ Eeroju nuvu korukunna vishayalu anni jaragali.",
-    "Morning nanaluuuuu 🫶 Eeroju kuda nannu ekkuva miss avalii… sare na? 😂❤️",
-    "Good morning moguduuu ❤️ Nee day baaga undali, endukante nuvvu deserve chesthav.",
-    "Morning nanaaa 💕 Oka smile ivvu… adi naa morning ki chaalu.",
-    "Good morning chinoda ❤️ Jagratthaga undu, time ki tinu, nannu vinuu 😌",
-    "Morning nanaluuuuu 🥺❤️ Nuvvu naatho unte chaalu, migatha anni secondary.",
-    "Good morning bangaram 💗 Eeroju kuda mana memories laga beautiful ga undali.",
-    "Morning moguda 😂❤️ Nee pellam cheppindi vinakapothe fine untundi!",
-    "Good morning nana ❤️ Nuvvu happy ga undalani every morning korukunta.",
-    "Morninggg nanaluuuuu 🫂❤️ Ippudu oka tight hug… virtual ga accept chesko.",
-    "Good morning cutie ❤️ Eeroju kuda naaku oka reason ivvu ninnu inka ekkuva love cheyyadaniki.",
-    "Morning bangaram 🥹💕 Naa life lo nuvvu undadam naa favourite thing.",
-    "Good morning nana ❤️ Eeroju entha busy unna, water tagadam marchipoku.",
-    "Morning nanaluuuuu ❤️ Nee pellam nunchi oka simple reminder — ninnu chala love chesthunna."
+    "good morning nanaluuu padukundi chaluu ni pellam waiting ikadaa",
+    "good morning cutiee manchiga padukunavaaa, ippudu vachi naku hug evuuuu",
+    "good morning bangaram I love youuu sooo muchhh day antha happy ga undu ok na",
+    "good morning nanaluu eroju em ayina nenu nitho unna ani gurthupetuko sare na",
+    "good morning husband garu ni wife ki kiss kavali anta evuuu",
+    "good morning bakodaa ippudu ni chinni chinni chethulatho call chey fast ga",
+    "good morning cutie pie i misss u sooooooo muchhhhh",
+    "good morning nana eroju antha happy ga undu sare naa",
+    "good morning pretty boy eroju antha good boy la ni wife maata vinali sare",
+    "good morning nanaluuu ippudu lechi naku oka cute smile ivvuuuu",
+    "good morning cutiee nenu first ninnu miss ayya nuvvu nannu miss ayyavaaa",
+    "good morning bangaram eroju kuda nannu konchem ekkuva gurthuchesko sare naaa",
+    "good morning nanaluuuu nee voice vinakunda naa morning complete avvaduuu call chey",
+    "good morning husband garu eeroju mee wife ni chala baga pamper cheyyaliii",
+    "good morning bakodaa lechi fresh ayyi first naku message chey fast ga",
+    "good morning cutie pie nee kosam oka big hug ready ga undi vachi teesko",
+    "good morning nana nuvvu happy ga unte naa morning kuda happy aipothundiii",
+    "good morning pretty boy eeroju kuda chala cute ga undali ok naaa",
+    "good morning nanaluuu tinnavaaa ledha malli nenu vachii thittalaa",
+    "good morning cutiee nee daggara unte bagundu ani already miss avthunnaaa",
+    "good morning bangaram I love youuuuu nuvvu chala special naaku sare na",
+    "good morning nanaluu eeroju em work unna madhyalo nannu marchipoku",
+    "good morning husband garu mee wife ki morning kiss ivvakunda ela start chestharu dayyy",
+    "good morning bakodaa ippudu lechi naa message chusi smile chey",
+    "good morning cutie pie ninnu chala chala misss avthunnaaa fast ga call chey",
+    "good morning nana nee day antha peaceful ga happy ga and nice ga undaliii",
+    "good morning pretty boy nenu cheppina maata vini eeroju good boy la undali sare naa",
+    "good morning nanaluuu nee kosam oka lot of love and hugs pampinchaaa receive chesko",
+    "good morning bangaram nenu ikkada unna ani gurthupetuko eppudu sare naaa",
+    "good morning cutiee eeroju kuda naa favourite person laaga full happy ga unduuuu"
 ];
 
 /* =====================================================
@@ -5657,15 +6080,60 @@ function getTodayKey() {
 }
 
 function getTodayMorningNote() {
-    const today = new Date();
-    const startDate = new Date(2026, 8, 18);
-    const difference = Math.floor(
-        (new Date(today.getFullYear(), today.getMonth(), today.getDate()) - startDate) /
-        (1000 * 60 * 60 * 24)
-    );
+    const todayKey = getTodayKey();
+    const storageKey = "ourWorldMorningNoteState";
+    let state = null;
 
-    const index = ((difference % morningNotes.length) + morningNotes.length) % morningNotes.length;
-    return morningNotes[index];
+    try {
+        state = JSON.parse(localStorage.getItem(storageKey) || "null");
+    } catch (error) {
+        state = null;
+    }
+
+    // Keep the same note for the whole day.
+    if (state && state.date === todayKey && typeof state.message === "string") {
+        return state.message;
+    }
+
+    // One shuffled bag = no repeats until all 30 notes have been used.
+    let order = Array.isArray(state?.order) ? state.order.slice() : [];
+    let nextIndex = Number.isInteger(state?.nextIndex) ? state.nextIndex : 0;
+
+    const validOrder =
+        order.length === morningNotes.length &&
+        new Set(order).size === morningNotes.length &&
+        order.every(function(index) {
+            return Number.isInteger(index) && index >= 0 && index < morningNotes.length;
+        });
+
+    if (!validOrder || nextIndex >= morningNotes.length) {
+        order = Array.from({ length: morningNotes.length }, function(_, index) { return index; });
+
+        // Fisher-Yates shuffle for a totally random order each 30-note cycle.
+        for (let i = order.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const temp = order[i];
+            order[i] = order[j];
+            order[j] = temp;
+        }
+
+        nextIndex = 0;
+    }
+
+    const message = morningNotes[order[nextIndex]];
+
+    try {
+        localStorage.setItem(storageKey, JSON.stringify({
+            order: order,
+            nextIndex: nextIndex + 1,
+            date: todayKey,
+            message: message
+        }));
+    } catch (error) {
+        // The app can still show the message even if browser storage is unavailable.
+    }
+
+    return message;
 }
 
 function formatMorningNoteDate() {
@@ -6629,11 +7097,10 @@ if (
 
             navigator
                 .serviceWorker
-                .register("./sw.js?v=3")
-                .then(
-                    function(registration) {
+                .register("./sw.js")
 
-                        registration.update();
+                .then(
+                    function() {
 
                         console.log(
                             "Our World PWA is ready!"
@@ -6652,14 +7119,6 @@ if (
 
                     }
                 );
-
-            navigator.serviceWorker.addEventListener(
-                "controllerchange",
-                function() {
-                    window.location.reload();
-                },
-                { once: true }
-            );
 
         }
     );
@@ -6737,135 +7196,484 @@ if (
 </section>
 
 <!-- =========================================================
-     HIS 19TH BIRTHDAY — ROMANTIC PINK + OCEAN TOUCH
-     Only this birthday experience is being styled here.
-     All existing cards and the lock screen remain untouched.
+     HIS 19TH BIRTHDAY — SCREEN 1 + SCREEN 2
+     Screen 1: greeting
+     Screen 2: collect 19 seashells -> unlock birthday letter
 ========================================================= -->
 <div id="birthdayCardOverlay" class="birthday-card-overlay hidden" aria-hidden="true">
-    <div class="birthday-scenes" id="birthdayScenes">
 
-        <!-- SCENE 1 -->
-        <section class="birthday-scene birthday-scene-1 active" data-scene="1">
-            <div class="birthday-romantic-bg bg-one"></div>
-            <div class="birthday-glow"></div>
-            <div class="birthday-ocean-bottom"></div>
-            <div class="birthday-stars"></div>
-            <div class="birthday-waves"></div>
+  <!-- SCREEN 1 -->
+  <section class="birthday-screen birthday-screen-one" id="birthdayScreenOne" aria-label="His birthday greeting">
+    <div class="birthday-paper-glow" aria-hidden="true"></div>
+    <div class="birthday-falling-layer" id="birthdayFallingLayer" aria-hidden="true"></div>
 
-            <!-- Fish ONLY on scene 1, moving left -> right -->
-            <div class="birthday-fish fish-one">🐟</div>
-
-            <div class="birthday-jellyfish-layer">
-                <div class="css-jelly jelly-a"><span></span><i></i><i></i><i></i></div>
-                <div class="css-jelly jelly-b"><span></span><i></i><i></i><i></i></div>
-            </div>
-
-            <div class="birthday-floating-hearts">
-                <span>♡</span><span>♥</span><span>♡</span><span>♡</span><span>♥</span>
-            </div>
-
-            <button class="birthday-close" type="button" onclick="closeBirthdayCard()">×</button>
-
-            <div class="birthday-content">
-                <div class="birthday-eyebrow">A LITTLE PIECE OF OUR OCEAN</div>
-                <h2>19 Years<br>of You</h2>
-                <p>Happy 19th Birthday,<br><span>nanaluuuuu ♡</span></p>
-                <p class="birthday-mini-line">A little ocean touch. A lot of love. Just for you.</p>
-                <button class="birthday-next" type="button" onclick="birthdayNextScene()">Dive In ♡</button>
-                <button class="birthday-back-small" type="button" onclick="closeBirthdayCard()">← Back to Our World</button>
-            </div>
-        </section>
-
-        <!-- SCENE 2 -->
-        <section class="birthday-scene birthday-scene-2" data-scene="2">
-            <div class="birthday-romantic-bg bg-two"></div>
-            <div class="birthday-glow"></div>
-            <div class="birthday-ocean-bottom"></div>
-            <div class="birthday-stars"></div>
-            <div class="birthday-waves"></div>
-
-            <div class="birthday-jellyfish-layer">
-                <div class="css-jelly jelly-c"><span></span><i></i><i></i><i></i></div>
-                <div class="css-jelly jelly-d"><span></span><i></i><i></i><i></i></div>
-            </div>
-
-            <div class="birthday-floating-hearts">
-                <span>♡</span><span>♥</span><span>♡</span><span>♥</span><span>♡</span>
-            </div>
-
-            <button class="birthday-close" type="button" onclick="closeBirthdayCard()">×</button>
-
-            <div class="birthday-content">
-                <div class="birthday-eyebrow">TODAY IS ALL ABOUT YOU</div>
-                <h2>Happy Birthday<br><span>nanaluuuuu ♡</span></h2>
-                <p>Another year of you.<br>Another beautiful chapter of us.</p>
-                <p class="birthday-mini-line">You make my world softer, happier, and a little more beautiful.</p>
-                <button class="birthday-next" type="button" onclick="birthdayNextScene()">Keep Going ♡</button>
-                <button class="birthday-back-small" type="button" onclick="closeBirthdayCard()">← Back to Our World</button>
-            </div>
-        </section>
-
-        <!-- SCENE 3 -->
-        <section class="birthday-scene birthday-scene-3" data-scene="3">
-            <div class="birthday-romantic-bg bg-three"></div>
-            <div class="birthday-glow"></div>
-            <div class="birthday-ocean-bottom"></div>
-            <div class="birthday-stars"></div>
-            <div class="birthday-waves"></div>
-
-            <div class="birthday-jellyfish-layer">
-                <div class="css-jelly jelly-e"><span></span><i></i><i></i><i></i></div>
-                <div class="css-jelly jelly-f"><span></span><i></i><i></i><i></i></div>
-            </div>
-
-            <div id="birthdayWishHearts" class="birthday-wish-hearts"></div>
-
-            <button class="birthday-close" type="button" onclick="closeBirthdayCard()">×</button>
-
-            <div class="birthday-content wish-content">
-                <div class="birthday-eyebrow">19 WAVES • 19 YEARS</div>
-                <div class="birthday-19">19</div>
-                <h2>Make a Wish ♡</h2>
-                <p>Close your eyes, make your wish,<br>and let the little ocean glow carry it away.</p>
-                <button id="birthdayWishButton" class="birthday-next" type="button" onclick="birthdayMakeWish()">Make a Wish ✨</button>
-                <div id="wishMessage" class="wish-message hidden">May every wish you make find its way to you. ♡</div>
-                <button class="birthday-back-small" type="button" onclick="closeBirthdayCard()">← Back to Our World</button>
-            </div>
-        </section>
-
-        <!-- SCENE 4 -->
-        <section class="birthday-scene birthday-scene-4" data-scene="4">
-            <div class="birthday-romantic-bg bg-four"></div>
-            <div class="birthday-glow"></div>
-            <div class="birthday-ocean-bottom"></div>
-            <div class="birthday-stars"></div>
-            <div class="birthday-waves"></div>
-
-            <div class="birthday-jellyfish-layer">
-                <div class="css-jelly jelly-g"><span></span><i></i><i></i><i></i></div>
-                <div class="css-jelly jelly-h"><span></span><i></i><i></i><i></i></div>
-            </div>
-
-            <div class="birthday-floating-hearts">
-                <span>♡</span><span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span>
-            </div>
-
-            <button class="birthday-close" type="button" onclick="closeBirthdayCard()">×</button>
-
-            <div class="birthday-content final-content">
-                <div class="birthday-eyebrow">FROM ME TO YOU</div>
-                <h2>My Pretty Boy ♡</h2>
-                <p>I love you, nanaluuuuu.<br>I love you, my cutie.<br>I love you, my pretty boy.</p>
-                <p class="birthday-mini-line">Happy 19th, and here's to every beautiful chapter still waiting for us.</p>
-                <button class="birthday-next" type="button" onclick="closeBirthdayCard()">Back to Our World ♡</button>
-            </div>
-        </section>
-
-        <div class="birthday-dots" id="birthdayDots">
-            <span class="active"></span><span></span><span></span><span></span>
-        </div>
+    <div class="birthday-floating-copy" aria-hidden="true">
+      <span class="birthday-float-word word-1">I love you nanalu ♡</span>
+      <span class="birthday-float-word word-2">Happy Birthday nanaluuu ♡</span>
+      <span class="birthday-float-word word-3">I love you cutie ♡</span>
+      <span class="birthday-float-word word-4">I love you bangaram ♡</span>
+      <span class="birthday-float-word word-5">Happy Birthday cutiepie ♡</span>
+      <span class="birthday-float-word word-6">I love you nanalu ♡</span>
+      <span class="birthday-float-word word-7">Happy Birthday nanaluuu ♡</span>
+      <span class="birthday-float-word word-8">I love you cutie ♡</span>
     </div>
+
+    <div class="birthday-screen-title">Na Vadu Putina Roju <span>♡</span></div>
+
+    <div class="birthday-glass-box">
+      <div class="birthday-kicker">A LITTLE BIRTHDAY LOVE</div>
+      <h1 class="birthday-hero-title">Happy Birthday,<br><span>Nanalu</span> <b>♡</b></h1>
+      <p class="birthday-hero-subtitle">Today is all about my favourite boy.</p>
+      <div class="birthday-center-heart" aria-hidden="true">♡</div>
+      <button class="birthday-continue" type="button" onclick="birthdayContinue()">Continue <span>♡</span></button>
+    </div>
+
+    <button class="birthday-close" type="button" onclick="closeBirthdayCard()" aria-label="Close birthday">×</button>
+  </section>
+
+  <!-- SCREEN 2 -->
+  <section class="birthday-screen birthday-screen-two hidden" id="birthdayScreenTwo" aria-label="Collect 19 seashells">
+    <div class="birthday-paper-glow birthday-paper-glow-two" aria-hidden="true"></div>
+    <div class="birthday-sea-haze birthday-sea-haze-one" aria-hidden="true"></div>
+    <div class="birthday-sea-haze birthday-sea-haze-two" aria-hidden="true"></div>
+
+    <div class="birthday-shell-header">
+      <div class="birthday-shell-kicker">A LITTLE TREASURE FOR MY BOY</div>
+      <h2>19 little seashells <span>♡</span></h2>
+      <p>Collect them in order — 01, 02, 03... all the way to 19. Only the next shell is ready for you.</p>
+      <div class="birthday-shell-count" id="birthdayShellCount">0 / 19 collected</div>
+    </div>
+
+    <div class="birthday-shell-field" id="birthdayShellField" aria-label="19 seashells to collect"></div>
+
+    <button class="birthday-close" type="button" onclick="closeBirthdayCard()" aria-label="Close birthday">×</button>
+  </section>
+
+  <!-- BIRTHDAY LETTER OPENING: uses the SAME envelope/flap/seal animation as the Letters card -->
+  <div class="letter-opening birthday-letter-opening hidden" id="birthdayLetterOpening" aria-hidden="true">
+    <div class="opening-envelope" aria-hidden="true">
+      <div class="opening-envelope-body"></div>
+      <div class="opening-paper"></div>
+      <div class="opening-flap"></div>
+      <div class="opening-seal">♡</div>
+    </div>
+  </div>
+
+  <!-- LETTER PAGE AFTER THE ENVELOPE OPENS -->
+  <section class="birthday-letter-result hidden" id="birthdayLetterResult" aria-hidden="true">
+    <div class="birthday-letter-result-glow" aria-hidden="true"></div>
+    <div class="birthday-letter-paper">
+      <div class="birthday-letter-stamp">♡</div>
+      <div class="birthday-letter-kicker">A BIRTHDAY LETTER FOR MY NANALU</div>
+      <h3>For my favourite boy ♡</h3>
+      <div class="birthday-letter-divider"><span>♡</span></div>
+      <div class="birthday-letter-body">
+        <p><strong>TO MY KUCHUU PUCHUU❤️</strong></p>
+        <p>Pedha pedha kallu…👀 yentha cute ga chusthayo nannu. Aa kallu nannu chusina prathisari na heartbeat skip avuthadi. Nuvvu ala chusthu unte entha sepu aina ninnu chusthu undalanipisthadi.🫶</p>
+        <p>Podavaina mukku…👃 nee face ki entha perfect ga suit avuthado.</p>
+        <p>Sannani meesam… ayooo na favourite, urike touch cheyalanipisthadi hehehehehehehehhehehhe. 😭❤️</p>
+        <p>Nee pedhavuluuu eppudu eppuduuu korkuthavooo ani waittt chesthu unteii🫦</p>
+        <p>Nee tongue (na most fav part), eppudu eppudu nannu taste chesthava ani chusthuntei. 👅❤️</p>
+        <p>Nee gaddam… ayyo, adi kuda naaku chala favourite. Nuvvu pakkana unte urike naa hand tho nee gaddam touch chesthu undalanipisthadi.🤌</p>
+        <p>Nee bugaluu nenu urike pinch cheyalanipinchela soft ga cute ga untayi. Nuvvu navvinappudu avi inka cute ga aipothayi hehehehe.</p>
+        <p>Nee smileee adi chusthe naaku automatic ga smile vachesthadi. Nuvvu full ga navvuthunte, aa moment ni ala chusthu undipovali anipisthadi.😘</p>
+        <p>Nee hair abbaaa oka oka hair style oka oka look anitloooo cuteeeee gaaa untavvv ahhhh naa disteii thagulthadiii🥹❤️</p>
+        <p>Nee ears... chinna chinna things kuda ninnu inka cute ga chesthayi. Urike daggariki velli nee ear nii korkalanipisthadi hehhehe🤭</p>
+        <p>Nee neck… ayyo, naaku chala favourite. Nuvvu pakkana unte daggariki vachi ala hug cheskoni nee neck daggara head pettukovali anipisthadi. inkaaaaa ni neckkk mothammmm korkalaniiii kiss evalanipisthadi inkaa ahh mole okatiii ahhhh enthaaa cute ga untavoo na heart melt ipothadiii😁🤭</p>
+        <p>Nee shoulders… nenu hug chesinappudu naa favourite place. Nee meeda naa head pettukoni konchem sepu em matladakunda ala undipovali anipisthadi.🥹</p>
+        <p>Nee chest daggariki vachi hug cheskunte aa comfort veru. Nuvvu nannu close ga hold chesinappudu naaku world motham pakkaki vellipoyinattu anipisthadi alaneii padukovalanipisthadi mi intiki vachinapudu oka roju ni bed medha manchiga hug cheskoni ni medha padukunaa yepatiki marchipolenuuu ah moment🥹🫶</p>
+        <p>Nee hands.... nee hand lo naa hand pettukoni ala undipovali anipisthadi. Nee fingers ni pattukoni, urike nee hand ni touch chesthu undadam kuda naaku chala special.🫳🫰</p>
+        <p>Nee arms… nannu hug chesinappudu aa arms lo ala safe ga undipovali anipisthadi. Nuvvu tight ga hug chesinappudu aa feeling naaku chala istam.❤️</p>
+        <p>Nee height em chepalii ahhh coorect ga ni shoulder degariki vastha antha height untav ina kudaaa ni shoulder medha manchiga padukovachu hehehehe.❤️</p>
+        <p>And nee whole look nee face nunchi nee hair varaku, nee neck nunchi nee hands varaku ni whole body <strong>prathi okka part naaku istamm anitikannaaaa nuvuuu istamm chepalenu yentha istamooo pichiiii nuvu anteii</strong></p>
+        <p>And erojuuu na kosam putavv enthaaa luckyyy Ooo nuvuu nak dorkadam nuvu levu ani thought kuda nen thatukolenuuu I LOVE YOU SOOO MUCH MY HUSBAND elaneiii happyy ga untuu nanuuu happy chuskoo hehehehe nen ni china wife ni kadhaaa</p>
+        <p><strong>HAPPY BIRTHDAY MY KUCHU PUCHUUU❤️🫶</strong></p>
+        <p>Thanksss bangaram nakosam putinanduku🥹</p>
+      </div>
+      <div class="birthday-letter-signature">yours cute little wife</div>
+      <div class="birthday-letter-actions">
+        <button type="button" onclick="backToBirthdayScreenOne()">← Back to Birthday</button>
+        <button type="button" onclick="closeBirthdayCard()">Back to Our World</button>
+      </div>
+    </div>
+  </section>
 </div>
+
+<style id="birthdayScreenOneStyles">
+.birthday-card-overlay{position:fixed;inset:0;z-index:100000;background:transparent;overflow:hidden}
+.birthday-card-overlay.hidden{display:none!important}
+.birthday-screen{position:absolute;inset:0;width:100%;height:100dvh;min-height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#6a414b;background:radial-gradient(circle at 16% 18%,rgba(211,171,104,.17),transparent 27%),radial-gradient(circle at 85% 80%,rgba(224,183,150,.20),transparent 30%),linear-gradient(135deg,#fffaf2 0%,#f7eee2 48%,#fff9f1 100%)}
+.birthday-screen.hidden{display:none!important}
+.birthday-screen:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.33;background:linear-gradient(rgba(130,91,58,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(130,91,58,.022) 1px,transparent 1px);background-size:34px 34px}
+.birthday-screen:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 48%,rgba(255,255,255,.55),transparent 38%)}
+.birthday-paper-glow{position:absolute;width:min(70vw,760px);height:min(70vw,760px);left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.60),rgba(218,185,131,.10) 45%,transparent 72%);filter:blur(20px);pointer-events:none;animation:birthdayGlowFloat 7s ease-in-out infinite alternate}
+@keyframes birthdayGlowFloat{from{transform:translate(-50%,-50%) scale(.96);opacity:.75}to{transform:translate(-50%,-50%) scale(1.05);opacity:1}}
+.birthday-screen-one{flex-direction:column;justify-content:center;padding:0 clamp(14px,4vw,30px)}
+.birthday-screen-title{position:relative;z-index:50;top:auto;left:auto;transform:none;white-space:nowrap;text-align:center;margin:0 0 clamp(7px,1.5vh,13px);font-family:"Brush Script MT","Segoe Script",cursive;font-size:clamp(27px,5vw,48px);font-weight:600;color:#8c5a53;letter-spacing:.02em;text-shadow:0 3px 14px rgba(125,76,73,.20),0 0 2px rgba(255,255,255,.65)}
+.birthday-screen-title span{color:#b99157}
+.birthday-floating-copy{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.birthday-float-word{position:absolute;display:block;white-space:nowrap;font-family:"Segoe Script","Brush Script MT",cursive;color:rgba(124,77,79,.32);font-weight:600;text-shadow:0 2px 10px rgba(94,58,60,.05);animation:birthdayWordFloat var(--dur) ease-in-out var(--delay) infinite alternate}
+.birthday-float-word::after{content:" ♡";color:rgba(176,137,82,.72)}
+.word-1{left:5%;top:24%;font-size:clamp(17px,2.4vw,28px);--dur:7s;--delay:-1s;transform:rotate(-7deg)}
+.word-2{right:5%;top:29%;font-size:clamp(16px,2.25vw,26px);--dur:8s;--delay:-4s;transform:rotate(6deg)}
+.word-3{left:6%;top:49%;font-size:clamp(15px,2.1vw,24px);--dur:6.5s;--delay:-2s;transform:rotate(5deg)}
+.word-4{right:5%;top:56%;font-size:clamp(15px,2.1vw,24px);--dur:7.5s;--delay:-5s;transform:rotate(-6deg)}
+.word-5{left:8%;bottom:16%;font-size:clamp(16px,2.2vw,25px);--dur:8.5s;--delay:-3s;transform:rotate(5deg)}
+.word-6{right:7%;bottom:11%;font-size:clamp(15px,2.0vw,23px);--dur:6.8s;--delay:-6s;transform:rotate(-5deg)}
+.word-7{right:30%;top:15%;font-size:clamp(13px,1.8vw,21px);opacity:.23;--dur:9s;--delay:-7s}
+.word-8{left:31%;bottom:9%;font-size:clamp(13px,1.8vw,20px);opacity:.22;--dur:7.8s;--delay:-4s}
+@keyframes birthdayWordFloat{from{translate:0 8px;opacity:.20}to{translate:0 -14px;opacity:.48}}
+.birthday-falling-layer{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.birthday-falling-layer span{position:absolute;top:-8vh;color:rgba(126,80,86,.28);font-family:Georgia,serif;font-size:clamp(11px,1.7vw,19px);white-space:nowrap;animation:birthdayFall var(--fall) linear var(--delay) infinite}
+.birthday-falling-layer span:after{content:" ♡";color:rgba(182,141,87,.68)}
+@keyframes birthdayFall{0%{transform:translate3d(0,-12vh,0) rotate(var(--rot));opacity:0}10%{opacity:.58}85%{opacity:.38}100%{transform:translate3d(var(--drift),115vh,0) rotate(calc(var(--rot) + 18deg));opacity:0}}
+.birthday-glass-box{position:relative;z-index:8;width:min(620px,84vw);margin-top:0;padding:clamp(35px,6vw,64px) clamp(25px,6vw,62px);border-radius:36px;text-align:center;overflow:hidden;background:rgba(255,255,255,.36);border:1px solid rgba(255,255,255,.82);box-shadow:0 30px 90px rgba(91,55,55,.14),inset 0 1px 0 rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.birthday-glass-box:before{content:"";position:absolute;left:-55%;top:-35%;width:45%;height:170%;transform:rotate(24deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.52),transparent);animation:birthdayGlassShine 6.5s ease-in-out infinite;pointer-events:none}
+@keyframes birthdayGlassShine{0%,38%{left:-60%}68%,100%{left:130%}}
+.birthday-kicker{position:relative;font-size:10px;letter-spacing:.29em;text-transform:uppercase;color:#a77d52;margin-bottom:18px;font-weight:600}
+.birthday-hero-title{position:relative;margin:0;color:#754652;font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;font-size:clamp(40px,7vw,74px);line-height:1.03;font-weight:800;letter-spacing:-.035em;text-shadow:0 6px 22px rgba(93,52,61,.12)}
+.birthday-hero-title span{color:#b75f72;font-family:"Brush Script MT","Segoe Script",cursive;font-size:1.14em;font-weight:600;letter-spacing:.01em}
+.birthday-hero-title b{color:#b99051;font-size:.66em;font-weight:400}
+.birthday-hero-subtitle{position:relative;margin:19px auto 22px;color:#7b6060;font-family:Georgia,serif;font-size:clamp(14px,2.1vw,18px);line-height:1.65}
+.birthday-center-heart{position:relative;width:50px;height:50px;margin:0 auto 22px;display:grid;place-items:center;border-radius:50%;color:#b36572;font-family:Georgia,serif;font-size:29px;background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.76);box-shadow:0 10px 24px rgba(136,83,88,.08);animation:birthdayHeartPulse 1.7s ease-in-out infinite}
+@keyframes birthdayHeartPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
+.birthday-continue{position:relative;border:0;cursor:pointer;padding:13px 25px;border-radius:999px;color:#fffaf6;font-family:Georgia,serif;font-size:14px;font-weight:700;background:linear-gradient(135deg,#a65c70,#c1975b);box-shadow:0 12px 28px rgba(127,74,83,.20);transition:transform .25s ease,box-shadow .25s ease}
+.birthday-continue:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(127,74,83,.25)}
+.birthday-close{position:absolute;z-index:100;top:18px;right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(109,70,74,.15);background:rgba(255,255,255,.42);color:#70444d;font-size:25px;cursor:pointer}
+
+/* ---------------- SCREEN 2 ---------------- */
+.birthday-screen-two{align-items:stretch;justify-content:flex-start;padding:clamp(88px,11vh,120px) 24px 34px;background:radial-gradient(circle at 50% 19%,rgba(255,255,255,.86),transparent 25%),radial-gradient(circle at 18% 82%,rgba(216,184,143,.17),transparent 27%),radial-gradient(circle at 82% 73%,rgba(223,178,160,.15),transparent 29%),linear-gradient(135deg,#fffaf2 0%,#f7eee2 48%,#fff9f1 100%)}
+.birthday-shell-header{position:relative;z-index:10;width:min(720px,90vw);margin:0 auto;text-align:center;transition:opacity .55s ease,transform .55s ease,filter .55s ease}
+.birthday-screen-two.shells-complete .birthday-shell-header{opacity:0;transform:translateY(-14px) scale(.97);filter:blur(2px);pointer-events:none}
+.birthday-shell-kicker{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#a77d52;font-weight:700;margin-bottom:11px}
+.birthday-shell-header h2{margin:0;color:#754652;font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;font-size:clamp(34px,5vw,58px);line-height:1.03;letter-spacing:-.03em}
+.birthday-shell-header h2 span{font-family:"Brush Script MT","Segoe Script",cursive;color:#b99051;font-weight:600}
+.birthday-shell-header p{margin:12px auto 10px;max-width:580px;color:#7b6060;font-family:Georgia,serif;font-size:clamp(13px,1.8vw,17px);line-height:1.6}
+.birthday-shell-count{display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.46);border:1px solid rgba(255,255,255,.8);box-shadow:0 8px 20px rgba(103,69,57,.08);font:600 11px/1 Georgia,serif;letter-spacing:.06em;color:#8f675d}
+.birthday-shell-field{position:absolute;inset:185px 14px 24px;z-index:12;pointer-events:auto;touch-action:manipulation}
+.birthday-shell{position:absolute;display:flex;align-items:center;justify-content:center;width:clamp(72px,8vw,98px);height:clamp(72px,8vw,98px);border:0;padding:0;border-radius:50%;background:transparent;cursor:pointer;pointer-events:auto !important;touch-action:manipulation;-webkit-tap-highlight-color:transparent;z-index:2;filter:drop-shadow(0 14px 20px rgba(123,87,59,.20));transition:transform .3s ease,opacity .35s ease,filter .3s ease}
+.birthday-shell.is-locked{opacity:.48;filter:grayscale(.22) drop-shadow(0 10px 16px rgba(123,87,59,.12));cursor:not-allowed;transform:scale(.94)}
+.birthday-shell.is-next{opacity:1;filter:drop-shadow(0 16px 24px rgba(169,126,78,.28));animation:birthdayNextShellPulse 1.8s ease-in-out infinite}
+.birthday-shell.is-next .birthday-shell-number{background:rgba(255,247,225,.96);border-color:rgba(169,126,78,.42);box-shadow:0 0 0 5px rgba(191,149,85,.10),0 4px 12px rgba(99,68,50,.12)}
+.birthday-shell.collected{animation:none}
+@keyframes birthdayNextShellPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.birthday-shell svg{width:100%;height:100%;display:block;overflow:visible;pointer-events:none;transform:rotate(var(--shell-rot));transition:transform .3s ease}
+.birthday-shell svg.birthday-shell-floating{animation:birthdayShellFloat var(--shell-dur) ease-in-out var(--shell-delay) infinite alternate}
+.birthday-shell:hover{transform:translateY(-6px) scale(1.08)}
+.birthday-shell:active{transform:translateY(-2px) scale(.95)}
+.birthday-shell.collected{opacity:0;transform:translate(var(--collect-x),var(--collect-y)) scale(.16) rotate(190deg);pointer-events:none !important}
+.birthday-shell-number{position:absolute;right:3px;bottom:9px;z-index:4;min-width:20px;height:20px;padding:0 5px;display:grid;place-items:center;border-radius:999px;background:rgba(255,250,240,.84);border:1px solid rgba(169,126,78,.20);font:700 9px/1 Georgia,serif;color:#8c6248;box-shadow:0 3px 10px rgba(99,68,50,.10);pointer-events:none}
+.birthday-sea-haze{position:absolute;pointer-events:none;border-radius:50%;filter:blur(10px);opacity:.55}
+.birthday-sea-haze-one{width:270px;height:130px;left:-70px;bottom:-20px;background:radial-gradient(circle,rgba(190,149,102,.16),transparent 68%);transform:rotate(-10deg)}
+.birthday-sea-haze-two{width:280px;height:150px;right:-70px;top:40%;background:radial-gradient(circle,rgba(222,170,164,.13),transparent 68%);transform:rotate(12deg)}
+
+.birthday-shell-complete-message{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:28;width:min(470px,88vw);padding:30px 24px 27px;border-radius:28px;text-align:center;background:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.88);box-shadow:0 26px 70px rgba(112,77,72,.16),inset 0 1px 0 rgba(255,255,255,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.birthday-shell-complete-kicker{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#a77d52;font-weight:700}
+.birthday-shell-complete-title{margin:10px 0 7px;color:#754652;font:400 clamp(28px,4.5vw,40px)/1.08 "Brush Script MT","Segoe Script",cursive}
+.birthday-shell-complete-message p{margin:0 auto 17px;max-width:360px;color:#7b6060;font:14px/1.6 Georgia,serif}
+.birthday-shell-complete-message button{border:0;cursor:pointer;padding:13px 20px;border-radius:999px;background:linear-gradient(135deg,#a65c70,#c1975b);color:#fffaf6;font:700 13px Georgia,serif;box-shadow:0 12px 28px rgba(127,74,83,.18)}
+
+/* ---------------- LETTER RESULT ---------------- */
+.birthday-letter-opening{z-index:300;position:fixed}
+.birthday-letter-result{position:fixed;inset:0;z-index:310;display:flex;align-items:center;justify-content:center;padding:32px 18px;overflow:auto;background:radial-gradient(circle at 16% 18%,rgba(211,171,104,.17),transparent 27%),radial-gradient(circle at 85% 80%,rgba(224,183,150,.20),transparent 30%),linear-gradient(135deg,#fffaf2 0%,#f7eee2 48%,#fff9f1 100%);opacity:1;transition:opacity .5s ease}
+.birthday-letter-result.hidden{display:none!important}
+.birthday-letter-result-glow{position:absolute;width:min(72vw,700px);height:min(72vw,700px);border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.72),rgba(218,185,131,.11) 47%,transparent 72%);filter:blur(18px);animation:birthdayGlowFloat 7s ease-in-out infinite alternate}
+.birthday-letter-actions{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin-top:8px}
+.birthday-letter-actions button{padding:12px 19px;border-radius:999px;border:1px solid rgba(169,126,78,.22);background:rgba(255,255,255,.48);color:#76535a;font:600 12px/1.1 "Trebuchet MS",Arial,sans-serif;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 10px 26px rgba(101,68,58,.08);transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+.birthday-letter-actions button:hover{transform:translateY(-2px);background:rgba(255,255,255,.7);box-shadow:0 14px 32px rgba(101,68,58,.12)}
+.birthday-letter-paper{position:relative;z-index:2;width:min(620px,92vw);max-height:min(80vh,720px);overflow:auto;padding:clamp(32px,5vw,54px);border-radius:26px;background:linear-gradient(145deg,rgba(255,252,245,.98),rgba(250,238,222,.96));border:1px solid rgba(255,255,255,.88);box-shadow:0 35px 90px rgba(101,68,58,.18),inset 0 1px 0 rgba(255,255,255,.96);text-align:center;color:#6f4b50}
+.birthday-letter-stamp{position:absolute;right:22px;top:20px;width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:rgba(191,149,85,.10);border:1px solid rgba(191,149,85,.25);color:#b99051;font:20px Georgia,serif}
+.birthday-letter-kicker{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:#a77d52;font-weight:700;margin-bottom:15px}
+.birthday-letter-paper h3{margin:0;color:#754652;font:600 clamp(30px,5vw,48px)/1.1 "Brush Script MT","Segoe Script",cursive}
+.birthday-letter-divider{display:flex;align-items:center;gap:12px;margin:18px 0 20px;color:#b99051}
+.birthday-letter-divider:before,.birthday-letter-divider:after{content:"";height:1px;flex:1;background:rgba(169,126,78,.22)}
+.birthday-letter-divider span{font:18px Georgia,serif}
+.birthday-letter-paper p{margin:0 auto 12px;max-width:520px;color:#7b6060;font:17px/1.8 Georgia,serif}
+.birthday-letter-paper p.birthday-letter-note{font-size:13px;color:#987878}
+.birthday-letter-signature{margin:24px 0 22px;color:#8a6664;font:17px/1.55 "Segoe Script","Brush Script MT",cursive}
+.birthday-letter-signature strong{color:#7a4656;font-size:25px}
+
+@media(max-width:760px){
+  .birthday-screen-title{top:auto;font-size:28px;margin-bottom:7px}
+  .birthday-glass-box{width:87vw;padding:38px 21px 31px;border-radius:29px}
+  .birthday-float-word{font-size:14px!important}
+  .word-1{top:18%;left:3%}.word-2{top:24%;right:2%}.word-3{top:69%;left:2%}.word-4{top:63%;right:2%}.word-5{bottom:8%;left:4%}.word-6{bottom:15%;right:3%}.word-7,.word-8{display:none}
+  .birthday-close{top:11px;right:11px}
+  .birthday-screen-two{padding:84px 12px 25px}
+  .birthday-shell-field{inset:172px 4px 20px}
+}
+@media(max-width:520px){
+  .birthday-glass-box{width:min(78vw,360px);margin-top:0;padding:27px 17px 24px;border-radius:24px}
+  .birthday-kicker{font-size:8px;letter-spacing:.22em;margin-bottom:13px}
+  .birthday-hero-title{font-size:clamp(33px,10vw,52px);line-height:1.02}
+  .birthday-hero-subtitle{margin:14px auto 17px;font-size:12px;line-height:1.5}
+  .birthday-center-heart{width:42px;height:42px;margin-bottom:18px;font-size:25px}
+  .birthday-continue{padding:11px 20px;font-size:12px}
+  .birthday-shell-header h2{font-size:34px}
+  .birthday-shell-header p{font-size:13px;max-width:330px}
+  .birthday-shell-field{inset:176px 2px 18px}
+  .birthday-shell{width:68px;height:68px}
+  .birthday-shell-count{font-size:10px}
+  .birthday-shell-unlock{top:53%;padding:24px 18px 22px}
+  .birthday-letter-paper{padding:34px 22px 28px;border-radius:20px}
+  .birthday-letter-actions{gap:8px}
+  .birthday-letter-actions button{padding:11px 15px;font-size:11px}
+}
+</style>
+
+<script id="birthdayExperienceScript">
+(function(){
+  const layer=document.getElementById('birthdayFallingLayer');
+  if(layer && layer.dataset.ready!=='1'){
+    layer.dataset.ready='1';
+    const phrases=['I love you nanalu','Happy Birthday nanaluuu','I love you cutie','I love you bangaram','Happy Birthday cutiepie'];
+    for(let i=0;i<22;i++){
+      const span=document.createElement('span');
+      span.textContent=phrases[i%phrases.length];
+      span.style.left=(Math.random()*100)+'%';
+      span.style.setProperty('--fall',(9+Math.random()*8)+'s');
+      span.style.setProperty('--delay',(-Math.random()*15)+'s');
+      span.style.setProperty('--drift',(-80+Math.random()*160)+'px');
+      span.style.setProperty('--rot',(-9+Math.random()*18)+'deg');
+      layer.appendChild(span);
+    }
+  }
+})();
+
+let birthdayShellCollected = 0;
+let birthdayLetterTimer1 = null;
+let birthdayLetterTimer2 = null;
+
+function birthdayContinue(){
+  const screen1=document.getElementById('birthdayScreenOne');
+  const screen2=document.getElementById('birthdayScreenTwo');
+  if(!screen1 || !screen2)return;
+  screen1.classList.add('hidden');
+  screen2.classList.remove('hidden');
+  resetBirthdayShellCollection();
+}
+
+function birthdayShellSvg(type, index){
+  const palettes=[
+    {light:'#fff7e6',mid:'#e8c797',deep:'#b37d54',shine:'#fffdf6'},
+    {light:'#f9efe0',mid:'#d8ae83',deep:'#93694f',shine:'#fff9ef'},
+    {light:'#fff4e2',mid:'#dcb48c',deep:'#a56f50',shine:'#fffdf8'}
+  ];
+  const c=palettes[type%palettes.length];
+  const id='shellGrad'+index;
+  if(type===1){
+    return `<svg viewBox="0 0 120 92" role="img" aria-hidden="true">
+      <defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c.shine}"/><stop offset=".42" stop-color="${c.light}"/><stop offset="1" stop-color="${c.mid}"/></linearGradient><radialGradient id="${id}g"><stop offset="0" stop-color="#fff7ec"/><stop offset="1" stop-color="${c.deep}"/></radialGradient><filter id="${id}s"><feGaussianBlur stdDeviation="1.2"/></filter></defs>
+      <ellipse cx="61" cy="76" rx="36" ry="7" fill="#9b6c4a" opacity=".13" filter="url(#${id}s)"/>
+      <path d="M15 72c7-26 22-47 42-55 16 3 34 19 48 47-11 10-26 15-45 13-18 1-33-1-45-5z" fill="url(#${id})" stroke="#a97855" stroke-opacity=".5" stroke-width="1.2"/>
+      <path d="M29 67c8-23 17-37 29-45M39 72c6-26 12-40 19-48M52 76c2-27 4-43 5-51M65 77c-2-27-1-41-5-50M78 75c-5-24-8-38-18-47M90 69c-8-20-15-32-27-41" fill="none" stroke="${c.deep}" stroke-opacity=".42" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M28 51c12-12 27-20 42-24" fill="none" stroke="${c.shine}" stroke-opacity=".78" stroke-width="3" stroke-linecap="round"/>
+    </svg>`;
+  }
+  if(type===2){
+    return `<svg viewBox="0 0 120 92" role="img" aria-hidden="true">
+      <defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c.shine}"/><stop offset=".45" stop-color="${c.light}"/><stop offset="1" stop-color="${c.mid}"/></linearGradient><radialGradient id="${id}g"><stop offset="0" stop-color="#fff6ea"/><stop offset="1" stop-color="${c.deep}"/></radialGradient></defs>
+      <ellipse cx="57" cy="77" rx="37" ry="7" fill="#8e6046" opacity=".13"/>
+      <path d="M18 70c2-22 16-43 36-54 18 2 35 12 46 29-8 15-22 28-45 34-15 2-27-1-37-9z" fill="url(#${id})" stroke="#a97855" stroke-opacity=".5" stroke-width="1.2"/>
+      <path d="M49 55c-8-4-9-13-3-19 7-7 19-7 25-1 7 7 4 17-3 21-7 4-14 1-14-5 0-5 5-8 9-6 4 2 3 7-1 8" fill="none" stroke="${c.deep}" stroke-width="3" stroke-linecap="round"/>
+      <path d="M31 62c6-17 12-28 25-42M39 68c7-18 15-31 26-41M69 65c7-14 11-21 12-31M83 58c4-8 6-13 6-20" fill="none" stroke="${c.deep}" stroke-opacity=".34" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M30 42c10-10 18-14 27-17" fill="none" stroke="${c.shine}" stroke-opacity=".8" stroke-width="3" stroke-linecap="round"/>
+    </svg>`;
+  }
+  return `<svg viewBox="0 0 120 92" role="img" aria-hidden="true">
+    <defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c.shine}"/><stop offset=".48" stop-color="${c.light}"/><stop offset="1" stop-color="${c.mid}"/></linearGradient><filter id="${id}s"><feGaussianBlur stdDeviation="1.5"/></filter></defs>
+      <ellipse cx="60" cy="77" rx="39" ry="7" fill="#8e6046" opacity=".13" filter="url(#${id}s)"/>
+      <path d="M12 72c7-31 27-51 48-57 21 7 38 27 48 57-23 12-52 15-96 0z" fill="url(#${id})" stroke="#9e7154" stroke-opacity=".52" stroke-width="1.2"/>
+      <path d="M20 67c17-22 29-36 40-46M31 71c12-24 21-38 29-50M44 74c7-25 12-41 16-53M57 76c1-27 1-44 3-56M70 75c-5-25-8-41-11-53M83 71c-8-23-15-37-22-47M96 66c-11-18-20-31-28-39" fill="none" stroke="${c.deep}" stroke-opacity=".46" stroke-width="1.55" stroke-linecap="round"/>
+      <path d="M26 50c10-10 20-16 31-21" fill="none" stroke="${c.shine}" stroke-opacity=".82" stroke-width="3" stroke-linecap="round"/>
+    </svg>`;
+}
+
+function resetBirthdayShellCollection(){
+  const field=document.getElementById('birthdayShellField');
+  const count=document.getElementById('birthdayShellCount');
+  if(!field || !count)return;
+
+  birthdayShellCollected=0;
+  field.innerHTML='';
+  const oldFinal=document.querySelector('#birthdayScreenTwo .birthday-shell-complete-message');
+  if(oldFinal)oldFinal.remove();
+  count.textContent='0 / 19 collected';
+
+  const shellPositions=[
+    [5,12,-8],[18,7,9],[32,14,-4],[47,8,7],[62,15,-7],[77,8,5],[91,19,-9],
+    [10,36,6],[25,29,-8],[40,40,8],[56,30,-5],[71,40,7],[87,33,-6],
+    [5,62,8],[20,54,-6],[35,68,5],[51,57,-9],[67,68,7],[84,58,-5]
+  ];
+
+  shellPositions.forEach(function(pos,index){
+    const shell=document.createElement('button');
+    shell.type='button';
+    shell.className='birthday-shell '+(index===0?'is-next':'is-locked');
+    shell.disabled=index!==0;
+    shell.setAttribute('aria-label',(index===0?'Collect':'Locked. Collect seashells in order. Next is')+' seashell '+(index+1));
+    shell.dataset.shellIndex=String(index);
+    shell.style.left=pos[0]+'%';
+    shell.style.top=pos[1]+'%';
+    shell.style.setProperty('--shell-rot',pos[2]+'deg');
+    shell.style.setProperty('--collect-x',((50-pos[0])*1.55)+'vw');
+    shell.style.setProperty('--collect-y',((50-pos[1])*1.2)+'vh');
+    shell.style.setProperty('--shell-dur',(3.0+((index*7)%9)*0.16)+'s');
+    shell.style.setProperty('--shell-delay',(-((index*11)%16)/10)+'s');
+    shell.innerHTML=birthdayShellSvg(index%3,index);
+    const shellSvg=shell.querySelector('svg');
+    if(shellSvg)shellSvg.classList.add('birthday-shell-floating');
+
+    const number=document.createElement('span');
+    number.className='birthday-shell-number';
+    number.textContent=String(index+1).padStart(2,'0');
+    shell.appendChild(number);
+
+    shell.addEventListener('pointerup',function(event){
+      event.preventDefault();
+      event.stopPropagation();
+      collectBirthdayShell(shell);
+    },{passive:false});
+    shell.addEventListener('click',function(event){
+      event.preventDefault();
+      event.stopPropagation();
+      collectBirthdayShell(shell);
+    });
+    field.appendChild(shell);
+  });
+}
+
+function collectBirthdayShell(shell){
+  if(!shell || shell.classList.contains('collected') || shell.disabled)return;
+
+  const shellIndex=Number(shell.dataset.shellIndex);
+  if(!Number.isInteger(shellIndex) || shellIndex!==birthdayShellCollected)return;
+
+  birthdayShellCollected++;
+  const count=document.getElementById('birthdayShellCount');
+  shell.classList.remove('is-next');
+  shell.classList.add('collected');
+  shell.disabled=true;
+  if(count)count.textContent=birthdayShellCollected+' / 19 collected';
+
+  const allShells=Array.from(document.querySelectorAll('#birthdayShellField .birthday-shell'));
+  allShells.forEach(function(item){
+    const itemIndex=Number(item.dataset.shellIndex);
+    if(itemIndex===birthdayShellCollected){
+      item.disabled=false;
+      item.classList.remove('is-locked');
+      item.classList.add('is-next');
+      item.setAttribute('aria-label','Collect seashell '+(itemIndex+1));
+    } else if(itemIndex>birthdayShellCollected){
+      item.disabled=true;
+      item.classList.remove('is-next');
+      item.classList.add('is-locked');
+    }
+  });
+
+  if(birthdayShellCollected>=19){
+    const screen2=document.getElementById('birthdayScreenTwo');
+    if(screen2)screen2.classList.add('shells-complete');
+    const field=document.getElementById('birthdayShellField');
+    if(field){
+      const final=document.createElement('div');
+      final.className='birthday-shell-complete-message';
+      final.innerHTML='<div class="birthday-shell-complete-kicker">ALL 19 FOUND ♡</div><div class="birthday-shell-complete-title">You found them all, nanalu.</div><p>Now there is one last little birthday surprise waiting for you.</p><button type="button" onclick="openBirthdayLetter()">Open My Birthday Letter ♡</button>';
+      field.appendChild(final);
+    }
+  }
+}
+function openBirthdayLetter(){
+  const opening=document.getElementById('birthdayLetterOpening');
+  const result=document.getElementById('birthdayLetterResult');
+  if(!opening || !result)return;
+
+  if(birthdayLetterTimer1)clearTimeout(birthdayLetterTimer1);
+  if(birthdayLetterTimer2)clearTimeout(birthdayLetterTimer2);
+
+  result.classList.add('hidden');
+  result.setAttribute('aria-hidden','true');
+  opening.classList.remove('hidden','opening-done','opening-now');
+  opening.setAttribute('aria-hidden','false');
+
+  const envelope=opening.querySelector('.opening-envelope');
+  const flap=opening.querySelector('.opening-flap');
+  const paper=opening.querySelector('.opening-paper');
+  const seal=opening.querySelector('.opening-seal');
+
+  if(envelope){
+    envelope.style.animation='none';
+    void envelope.offsetWidth;
+    envelope.style.animation='';
+  }
+  if(flap)flap.style.animation='';
+  if(paper)paper.style.animation='';
+  if(seal)seal.style.animation='';
+
+  birthdayLetterTimer1=setTimeout(function(){
+    opening.classList.add('opening-now');
+  },120);
+
+  birthdayLetterTimer2=setTimeout(function(){
+    opening.classList.add('opening-done','hidden');
+    opening.setAttribute('aria-hidden','true');
+    result.classList.remove('hidden');
+    result.setAttribute('aria-hidden','false');
+  },1450);
+}
+
+function backToBirthdayScreenOne(){
+  const opening=document.getElementById('birthdayLetterOpening');
+  const result=document.getElementById('birthdayLetterResult');
+  const screen1=document.getElementById('birthdayScreenOne');
+  const screen2=document.getElementById('birthdayScreenTwo');
+  if(birthdayLetterTimer1)clearTimeout(birthdayLetterTimer1);
+  if(birthdayLetterTimer2)clearTimeout(birthdayLetterTimer2);
+  if(opening){opening.classList.add('hidden','opening-done');opening.classList.remove('opening-now');opening.setAttribute('aria-hidden','true');}
+  if(result){result.classList.add('hidden');result.setAttribute('aria-hidden','true');}
+  if(screen2)screen2.classList.add('hidden');
+  if(screen1)screen1.classList.remove('hidden');
+}
+
+function closeBirthdayLetter(){
+  backToBirthdayScreenOne();
+}
+
+function openBirthdayCard(){
+  const overlay=document.getElementById('birthdayCardOverlay');
+  const screen1=document.getElementById('birthdayScreenOne');
+  const screen2=document.getElementById('birthdayScreenTwo');
+  const opening=document.getElementById('birthdayLetterOpening');
+  const result=document.getElementById('birthdayLetterResult');
+  if(!overlay)return;
+
+  overlay.classList.remove('hidden');
+  overlay.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+
+  if(screen1)screen1.classList.remove('hidden');
+  if(screen2)screen2.classList.add('hidden');
+  if(opening){opening.classList.add('hidden','opening-done');opening.classList.remove('opening-now');opening.setAttribute('aria-hidden','true');}
+  if(result){result.classList.add('hidden');result.setAttribute('aria-hidden','true');}
+  resetBirthdayShellCollection();
+}
+
+function closeBirthdayCard(){
+  const overlay=document.getElementById('birthdayCardOverlay');
+  if(!overlay)return;
+  overlay.classList.add('hidden');
+  overlay.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+  resetBirthdayShellCollection();
+}
+</script>
+
+<style id="birthdayShellAnimationStyles">
+@keyframes birthdayShellFloat{
+  0%{transform:translateY(0) rotate(-2deg)}
+  100%{transform:translateY(-9px) rotate(2deg)}
+}
+</style>
 
 <!-- =========================================================
      WEATHER MODAL — EXISTING WEATHER CARD, NOW FUNCTIONAL
@@ -6892,15 +7700,9 @@ if (
 
 <style>
 /* =========================================================
-   ROMANTIC 19TH BIRTHDAY EXPERIENCE
-   Dark blush + subtle ocean + hearts. No cake, no heavy ocean UI.
+   PREMIUM FULL-SCREEN WEATHER
 ========================================================= */
-.birthday-card-overlay{position:fixed;inset:0;z-index:100000;background:#07030a;display:flex;align-items:center;justify-content:center;overflow:hidden}.birthday-card-overlay.hidden{display:none}.birthday-scenes{position:relative;width:100%;height:100%;overflow:hidden;background:#07030a}.birthday-scene{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s ease}.birthday-scene.active{opacity:1;visibility:visible}.birthday-romantic-bg{position:absolute;inset:-7%;z-index:1;transform:scale(1.04);animation:bdayCamera 10s ease-in-out infinite alternate}.birthday-scene-2 .birthday-romantic-bg,.birthday-scene-4 .birthday-romantic-bg{animation-direction:alternate-reverse}@keyframes bdayCamera{0%{transform:scale(1.03) translate3d(-.3%,-.2%,0)}50%{transform:scale(1.075) translate3d(.25%,.2%,0)}100%{transform:scale(1.11) translate3d(-.2%,.3%,0)}}.bg-one{background:radial-gradient(circle at 50% 36%,rgba(255,136,191,.24),transparent 27%),radial-gradient(circle at 17% 84%,rgba(255,81,151,.17),transparent 30%),linear-gradient(135deg,#09040b 0%,#1d0719 42%,#240d23 70%,#081822 100%)}.bg-two{background:radial-gradient(circle at 72% 28%,rgba(255,124,185,.2),transparent 28%),radial-gradient(circle at 28% 76%,rgba(113,193,218,.11),transparent 29%),linear-gradient(135deg,#0a050a,#210c1d 45%,#120e20 75%,#071923)}.bg-three{background:radial-gradient(circle at 50% 42%,rgba(255,103,177,.2),transparent 23%),radial-gradient(circle at 15% 88%,rgba(83,193,224,.13),transparent 28%),linear-gradient(145deg,#080309,#190719 46%,#160f25 75%,#07151f)}.bg-four{background:radial-gradient(circle at 50% 32%,rgba(255,151,207,.22),transparent 28%),radial-gradient(circle at 80% 82%,rgba(71,190,218,.1),transparent 30%),linear-gradient(135deg,#090309,#210919 47%,#17102b 78%,#06141b)}.birthday-glow{position:absolute;inset:-20%;z-index:2;background:radial-gradient(circle at 50% 50%,rgba(255,105,177,.11),transparent 34%),radial-gradient(circle at 50% 100%,rgba(74,204,225,.08),transparent 39%);filter:blur(22px);animation:bdayGlow 7s ease-in-out infinite alternate}@keyframes bdayGlow{from{transform:scale(1);opacity:.75}to{transform:scale(1.1);opacity:1}}.birthday-ocean-bottom{position:absolute;left:-10%;bottom:-13%;width:120%;height:38%;z-index:6;background:radial-gradient(ellipse at 50% 110%,rgba(77,211,231,.17),transparent 60%),linear-gradient(180deg,transparent,rgba(0,20,28,.25));pointer-events:none}.birthday-waves{position:absolute;left:-8%;bottom:7%;width:116%;height:30%;z-index:7;pointer-events:none;opacity:.5;overflow:hidden}.birthday-waves:before,.birthday-waves:after{content:"";position:absolute;left:-4%;width:108%;height:55%;border-top:1px solid rgba(137,227,237,.24);border-radius:50%;box-shadow:0 -13px 0 rgba(255,147,201,.05),0 -26px 0 rgba(107,219,232,.05);animation:waveMove 8s ease-in-out infinite alternate}.birthday-waves:before{bottom:8%}.birthday-waves:after{bottom:24%;animation-duration:11s;animation-delay:-3s}@keyframes waveMove{from{transform:translateX(-4%) scaleX(1)}to{transform:translateX(4%) scaleX(1.07)}}.birthday-stars{position:absolute;inset:0;z-index:5;pointer-events:none;background-image:radial-gradient(circle,rgba(255,222,238,.72) 0 1px,transparent 1.6px),radial-gradient(circle,rgba(164,235,242,.42) 0 1px,transparent 1.5px);background-size:112px 96px,157px 141px;background-position:12px 20px,44px 78px;opacity:.23;animation:starsDrift 12s linear infinite}@keyframes starsDrift{from{transform:translate3d(0,0,0)}to{transform:translate3d(25px,-18px,0)}}.birthday-content{position:absolute;z-index:30;left:50%;top:50%;width:min(820px,90vw);transform:translate(-50%,-50%);text-align:center;color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.48);animation:bdayTextIn 1s ease}.birthday-scene:not(.active) .birthday-content{animation:none}@keyframes bdayTextIn{from{opacity:0;transform:translate(-50%,-46%) scale(.95)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}.birthday-eyebrow{font:10px Arial,sans-serif;letter-spacing:4px;color:rgba(255,205,229,.7);margin-bottom:14px}.birthday-content h2{font:clamp(42px,7vw,74px)/1.02 Georgia,"Times New Roman",serif;font-weight:600;letter-spacing:-1px;text-shadow:0 0 15px rgba(255,201,230,.35),0 0 35px rgba(255,80,165,.22)}.birthday-content h2 span{font-size:clamp(27px,4.5vw,48px);color:#ffc4df}.birthday-content p{font-size:clamp(15px,2.2vw,20px);line-height:1.7;margin-top:20px;color:rgba(255,247,251,.92)}.birthday-mini-line{font-size:13px!important;opacity:.68;margin-top:12px!important}.birthday-next{margin-top:25px;padding:13px 26px;border:1px solid rgba(255,173,215,.38);border-radius:30px;background:linear-gradient(135deg,rgba(255,54,153,.2),rgba(75,201,220,.1));color:#fff;cursor:pointer;font-size:14px;box-shadow:0 0 25px rgba(255,46,153,.11);transition:transform .25s ease,background .25s ease,box-shadow .25s ease}.birthday-next:hover{transform:translateY(-3px) scale(1.03);background:linear-gradient(135deg,rgba(255,54,153,.3),rgba(75,201,220,.16));box-shadow:0 0 30px rgba(255,46,153,.18)}.birthday-back-small{display:block;margin:14px auto 0;border:0;background:transparent;color:rgba(255,206,228,.56);font-size:12px;cursor:pointer}.birthday-back-small:hover{color:#fff}.birthday-close{position:absolute;z-index:80;right:18px;top:15px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,191,220,.27);background:rgba(10,3,12,.32);color:#fff;font-size:27px;cursor:pointer;backdrop-filter:blur(8px)}.birthday-19{font:900 clamp(100px,19vw,190px)/.82 Arial,sans-serif;color:#ffd8ea;text-shadow:0 0 18px rgba(255,255,255,.6),0 0 48px rgba(255,65,157,.48),0 0 85px rgba(54,204,220,.16);animation:numberGlow 2.4s ease-in-out infinite alternate}@keyframes numberGlow{to{transform:scale(1.04)}}.wish-content .birthday-next{min-width:170px}.wish-message{position:relative;margin:18px auto 0;width:min(90%,520px);padding:13px 18px;border:1px solid rgba(255,188,220,.2);border-radius:18px;background:rgba(21,7,18,.42);backdrop-filter:blur(10px);font-size:14px;color:#ffe8f4}.wish-message.hidden{display:none}.birthday-wish-hearts{position:absolute;inset:0;z-index:41;pointer-events:none;overflow:hidden}.wish-burst{position:absolute;left:50%;top:52%;font-size:18px;color:#ff91c3;text-shadow:0 0 10px rgba(255,53,150,.85);animation:wishBurst 1.8s ease-out forwards}@keyframes wishBurst{0%{opacity:0;transform:translate(-50%,-50%) scale(.2)}15%{opacity:1}100%{opacity:0;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) rotate(var(--r)) scale(1.15)}}.birthday-floating-hearts{position:absolute;inset:0;z-index:9;pointer-events:none;overflow:hidden}.birthday-floating-hearts span{position:absolute;bottom:-40px;color:rgba(255,138,190,.5);font-size:var(--heart-size,20px);text-shadow:0 0 12px rgba(255,65,155,.55);animation:floatBdayHeart var(--heart-dur,11s) linear var(--heart-delay,0s) infinite}.birthday-floating-hearts span:nth-child(1){left:9%;--heart-size:18px;--heart-dur:12s;--heart-delay:-2s}.birthday-floating-hearts span:nth-child(2){left:27%;--heart-size:13px;--heart-dur:9s;--heart-delay:-6s}.birthday-floating-hearts span:nth-child(3){left:52%;--heart-size:17px;--heart-dur:13s;--heart-delay:-3s}.birthday-floating-hearts span:nth-child(4){left:74%;--heart-size:12px;--heart-dur:10s;--heart-delay:-7s}.birthday-floating-hearts span:nth-child(5){left:90%;--heart-size:16px;--heart-dur:14s;--heart-delay:-5s}.birthday-floating-hearts span:nth-child(6){left:42%;--heart-size:11px;--heart-dur:11s;--heart-delay:-1s}@keyframes floatBdayHeart{0%{transform:translate3d(0,0,0) scale(.55);opacity:0}12%{opacity:.65}50%{transform:translate3d(35px,-55vh,0) scale(1)}100%{transform:translate3d(-25px,-118vh,0) scale(1.1);opacity:0}}.birthday-fish{position:absolute;z-index:20;left:-12vw;top:38%;font-size:26px;filter:drop-shadow(0 0 8px rgba(94,219,227,.6));animation:fishAcross 14s linear infinite}@keyframes fishAcross{0%{transform:translate3d(0,0,0);opacity:0}8%{opacity:.8}50%{transform:translate3d(56vw,-24px,0)}92%{opacity:.78}100%{transform:translate3d(120vw,-52px,0);opacity:0}}.birthday-jellyfish-layer{position:absolute;inset:0;z-index:18;pointer-events:none}.css-jelly{position:absolute;width:55px;height:86px;opacity:.34;filter:drop-shadow(0 0 13px rgba(89,215,224,.55));animation:jellyFloat 8s ease-in-out infinite alternate}.css-jelly span{position:absolute;left:8px;top:0;width:39px;height:29px;border-radius:22px 22px 10px 10px;background:linear-gradient(180deg,rgba(160,245,248,.6),rgba(79,196,210,.24));border:1px solid rgba(192,250,250,.35)}.css-jelly i{position:absolute;top:23px;width:2px;height:48px;border-radius:2px;background:rgba(163,238,241,.46);transform-origin:top;animation:jellyTentacle 2.6s ease-in-out infinite alternate}.css-jelly i:nth-child(2){left:15px}.css-jelly i:nth-child(3){left:27px;animation-delay:-.7s}.css-jelly i:nth-child(4){left:39px;animation-delay:-1.1s}@keyframes jellyTentacle{to{transform:rotate(11deg) scaleY(.88)}}@keyframes jellyFloat{from{transform:translate3d(-12px,8px,0) rotate(-4deg)}to{transform:translate3d(18px,-28px,0) rotate(4deg)}}.jelly-a{left:7%;top:25%;animation-delay:-1s}.jelly-b{right:10%;top:58%;animation-delay:-3s;transform:scale(.82)}.jelly-c{left:4%;top:61%;animation-delay:-2s;transform:scale(.76)}.jelly-d{right:7%;top:24%;animation-delay:-4s;transform:scale(.88)}.jelly-e{left:11%;top:34%;animation-delay:-3s;transform:scale(.82)}.jelly-f{right:12%;top:65%;animation-delay:-1s;transform:scale(.7)}.jelly-g{left:6%;top:62%;animation-delay:-2s;transform:scale(.78)}.jelly-h{right:9%;top:30%;animation-delay:-5s;transform:scale(.9)}
-
-/* =========================================================
-   WEATHER MODAL
-========================================================= */
-.weather-modal{position:fixed;inset:0;z-index:100001;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(3,7,18,.62);backdrop-filter:blur(14px)}.weather-modal.show{display:flex;animation:weatherFade .3s ease}@keyframes weatherFade{from{opacity:0}to{opacity:1}}.weather-box{width:100%;max-width:390px;padding:30px 24px;border-radius:30px;text-align:center;color:#fff;background:linear-gradient(145deg,rgba(70,155,220,.42),rgba(20,45,90,.55));border:1px solid rgba(255,255,255,.22);box-shadow:0 25px 70px rgba(0,0,0,.4);backdrop-filter:blur(22px);animation:weatherBox .4s ease}@keyframes weatherBox{from{transform:translateY(25px) scale(.94);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}.weather-icon{font-size:64px;margin-bottom:10px}.weather-location{font-size:14px;opacity:.72;margin-bottom:8px}.weather-temperature{font-size:55px;font-weight:bold;margin-bottom:5px}.weather-condition{font-size:18px;margin-bottom:18px}.weather-details{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px}.weather-detail{padding:12px 8px;border-radius:16px;background:rgba(255,255,255,.09);font-size:12px}.weather-detail strong{display:block;font-size:15px;margin-bottom:3px}.weather-message{font-size:13px;line-height:1.5;opacity:.78;margin-bottom:20px}.weather-close{padding:11px 25px;border-radius:24px;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.18);color:#fff;cursor:pointer}.weather-close:hover{background:rgba(255,255,255,.08)}
+.weather-modal{position:fixed;inset:0;z-index:100001;display:none;align-items:center;justify-content:center;overflow:hidden;padding:0;background:radial-gradient(circle at 50% 12%,rgba(126,214,255,.27),transparent 31%),radial-gradient(circle at 15% 88%,rgba(94,132,255,.17),transparent 34%),linear-gradient(145deg,#05101c 0%,#0b2037 43%,#123652 72%,#050d17 100%);backdrop-filter:blur(12px)}.weather-modal.show{display:flex;animation:premiumWeatherFade .55s ease}.weather-modal::before{content:"";position:absolute;width:min(80vw,760px);height:min(80vw,760px);top:-30%;left:50%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(132,222,255,.22),transparent 68%);filter:blur(12px);animation:weatherSkyGlow 7s ease-in-out infinite alternate;pointer-events:none}.weather-modal::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(47,128,255,.13),transparent 48%);pointer-events:none}@keyframes premiumWeatherFade{from{opacity:0}to{opacity:1}}@keyframes weatherSkyGlow{from{transform:translateX(-50%) scale(.94);opacity:.6}to{transform:translateX(-50%) scale(1.08);opacity:1}}.weather-box{position:relative;z-index:5;width:min(850px,92vw);max-width:850px;padding:40px 25px;margin:0;border:0;border-radius:0;text-align:center;color:#fff;background:transparent;box-shadow:none;backdrop-filter:none;animation:weatherPremiumIn .7s cubic-bezier(.16,1,.3,1)}@keyframes weatherPremiumIn{from{opacity:0;transform:translateY(30px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}.weather-icon{font-size:clamp(76px,12vw,120px);line-height:1;margin-bottom:18px;filter:drop-shadow(0 12px 30px rgba(91,205,255,.22));animation:weatherIconFloat 3s ease-in-out infinite alternate}@keyframes weatherIconFloat{from{transform:translateY(0)}to{transform:translateY(-8px)}}.weather-location{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(219,242,255,.66);margin-bottom:15px}.weather-temperature{font-size:clamp(68px,12vw,112px);line-height:.95;font-weight:500;letter-spacing:-4px;margin-bottom:12px;text-shadow:0 0 35px rgba(126,214,255,.2)}.weather-condition{font-family:Georgia,"Times New Roman",serif;font-size:clamp(23px,4vw,34px);margin-bottom:35px;color:rgba(244,251,255,.94)}.weather-details{width:min(650px,90vw);margin:0 auto 30px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.weather-detail{padding:17px 12px;border-radius:20px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);font-size:12px;color:rgba(225,243,255,.68);backdrop-filter:blur(10px)}.weather-detail strong{display:block;font-size:16px;margin-bottom:4px;color:#fff}.weather-message{width:min(650px,88vw);margin:0 auto 30px;font-size:15px;line-height:1.75;color:rgba(232,246,255,.75)}.weather-close{padding:13px 28px;border-radius:40px;border:1px solid rgba(207,237,255,.2);background:rgba(255,255,255,.045);color:rgba(239,250,255,.82);cursor:pointer;font-size:12px;letter-spacing:.4px;backdrop-filter:blur(10px);transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease}.weather-close:hover{transform:translateY(-2px);background:rgba(255,255,255,.09);border-color:rgba(207,237,255,.4);box-shadow:0 10px 35px rgba(61,172,255,.12)}
 
 @media(max-width:600px){.birthday-content{width:91vw}.birthday-close{right:11px;top:10px}.birthday-content p{font-size:14px}.birthday-eyebrow{letter-spacing:3px}.birthday-19{font-size:110px}.weather-box{max-width:360px;padding:26px 18px}}
 
@@ -6908,90 +7710,29 @@ if (
 
 <script>
 /* =========================================================
-   BIRTHDAY SCENE NAVIGATION
+   BIRTHDAY EXPERIENCE — SCREEN 1 ONLY
 ========================================================= */
-let birthdaySceneIndex = 0;
-let birthdayWishDone = false;
-
 function openBirthdayCard(){
-    const overlay = document.getElementById("birthdayCardOverlay");
-    if (!overlay) return;
-
-    overlay.classList.remove("hidden");
-    overlay.setAttribute("aria-hidden","false");
-    document.body.style.overflow = "hidden";
-    birthdaySceneIndex = 0;
-    birthdayWishDone = false;
-    showBirthdayScene(0);
+  const overlay=document.getElementById("birthdayCardOverlay");
+  const screen1=document.getElementById("birthdayScreenOne");
+  const screen2=document.getElementById("birthdayScreenTwo");
+  const opening=document.getElementById("birthdayLetterOpening");
+  const result=document.getElementById("birthdayLetterResult");
+  if(!overlay)return;
+  overlay.classList.remove("hidden");
+  overlay.setAttribute("aria-hidden","false");
+  document.body.style.overflow="hidden";
+  if(screen1)screen1.classList.remove("hidden");
+  if(screen2)screen2.classList.add("hidden");
+  if(opening){opening.classList.add("hidden","opening-done");opening.classList.remove("opening-now");opening.setAttribute("aria-hidden","true");}
+  if(result){result.classList.add("hidden");result.setAttribute("aria-hidden","true");}
 }
-
 function closeBirthdayCard(){
-    const overlay = document.getElementById("birthdayCardOverlay");
-    if (overlay) {
-        overlay.classList.add("hidden");
-        overlay.setAttribute("aria-hidden","true");
-    }
-    document.body.style.overflow = "";
-}
-
-function showBirthdayScene(index){
-    const scenes = document.querySelectorAll(".birthday-scene");
-    if (!scenes.length) return;
-
-    birthdaySceneIndex = Math.max(0, Math.min(index, scenes.length - 1));
-
-    scenes.forEach(function(scene, i){
-        scene.classList.toggle("active", i === birthdaySceneIndex);
-    });
-
-    document.querySelectorAll(".birthday-dots span").forEach(function(dot, i){
-        dot.classList.toggle("active", i === birthdaySceneIndex);
-    });
-
-    if (birthdaySceneIndex !== 2) {
-        const message = document.getElementById("wishMessage");
-        if (message && birthdaySceneIndex !== 2) message.classList.add("hidden");
-    }
-}
-
-function birthdayNextScene(){
-    showBirthdayScene(Math.min(3, birthdaySceneIndex + 1));
-}
-
-function birthdayMakeWish(){
-    if (birthdayWishDone) return;
-    birthdayWishDone = true;
-
-    const button = document.getElementById("birthdayWishButton");
-    const message = document.getElementById("wishMessage");
-    const layer = document.getElementById("birthdayWishHearts");
-
-    if (button) {
-        button.disabled = true;
-        button.textContent = "Wish sent to the stars ♡";
-    }
-
-    if (message) {
-        message.classList.remove("hidden");
-    }
-
-    if (layer) {
-        for (let i = 0; i < 26; i++) {
-            const h = document.createElement("span");
-            h.className = "wish-burst";
-            h.textContent = i % 5 === 0 ? "♥" : "♡";
-            h.style.setProperty("--x", (Math.random() * 360 - 180) + "px");
-            h.style.setProperty("--y", (Math.random() * -340 - 40) + "px");
-            h.style.setProperty("--r", (Math.random() * 90 - 45) + "deg");
-            h.style.fontSize = (12 + Math.random() * 18) + "px";
-            layer.appendChild(h);
-            setTimeout(function(){ h.remove(); }, 1900);
-        }
-    }
-
-    setTimeout(function(){
-        showBirthdayScene(3);
-    }, 1900);
+  const overlay=document.getElementById("birthdayCardOverlay");
+  if(!overlay)return;
+  overlay.classList.add("hidden");
+  overlay.setAttribute("aria-hidden","true");
+  document.body.style.overflow="";
 }
 
 /* =========================================================
@@ -7291,28 +8032,86 @@ document.addEventListener("keydown", function(event){
 <script id="readMeExperienceScript">
 const readMeMoods = [
     {id:"sad",emoji:"🥺",title:"When You're Sad",sub:"Konchem heart heavy ga unte...",accent:"#c78cff",glow:"rgba(199,140,255,.18)",bg:"radial-gradient(circle at 50% 26%,rgba(92,70,145,.32),transparent 42%),linear-gradient(145deg,#08060d,#130d1b)",messages:[
-        "Nanaluuuuu, eeroju konchem baadhaga anipisthe parledhu. Prathi sari strong ga undalsina avasaram ledu. Konchem rest teesko, slow ga breathe cheyyi. Nenu ikkade unna ani gurthupettuko. ❤️",
-        "My pretty boy, eeroju day heavy ga unna sare, anni okesari carry cheyyalsina avasaram ledu. Konchem na daggara ki vacchinattu feel avvu. Oka big hug nee kosam ready ga undi. 🫂❤️",
-        "Nanaaa, soft day vachindani guilt feel avvakuuu. Edaina jarigina, adi pass aipothundi. Ippudu just calm ga undu. Nee pellam ninnu chala love chesthundi. 🤍",
-        "Hey cutie, sad thoughts anni okesari solve cheyyaku. Oka breath teesko, oka small step vesko. Migatha anni taruvatha. Nuvvu alone kaadu. ❤️"
+        "nanaluuuuu enduku sad ga unnavvv, em ayina sare naatho cheppuuuu, nee pellam ikkade undii ❤️",
+        "nanaaa em ayindo cheppakapoyina parledhu kani ila sad ga matram undakuuu, konchem navvuuuu 🥺❤️",
+        "good boyyy first konchem calm avvuuuu, tarvatha em ayindo nee pellam ki cheppuuu sare naaa 🫂❤️",
+        "bakodaa anni mind lo petkoni kurchoku, naaku call chey fast ga, nenu vintaa ❤️",
+        "nanaluuuuu nee heart heavy ga unte ikkada raaa, oka big hug isthaa tarvatha anni cheppukundhammm 🫂",
+        "nanaaa eeroju bad ga anipisthe parledhuuu, kani alone ga feel avvaku, nenu unnagaaaa ❤️",
+        "cutieee nuvvu sad ga unte naaku kuda assalu nachadhuuu, ippudu konchem cute smile ivvuuuu 🥺",
+        "nanaluuuu em jarigina nuvvu okkadive handle cheyyalsina avasaram leduuu, nee pellam ni kuda use chesko 😂❤️",
+        "pretty boyyy first water taguuu, konchem relax avvuu, tarvatha nak call cheyy nen unaa niku❤️",
+        "nanaaa nee bad mood ni nenu pattinchukonu anukunnavaaa, ikkada nenu full serious ga unnanuuu raaa ❤️",
+        "nanaluuuuu em ayina saree nenu nee side ye untanuuu, nuvvu cheppina cheppakapoyina ❤️",
+        "cutie pieee ippudu eyes close chesi oka big hug ichinattu imagine chey, konchem better ga anipisthadiii 🫂❤️",
+        "nanaaa anni okesari alochinchakuuu, first calm avvuuuu, one by one chusukundham sare naaa ❤️",
+        "bakodaaa nee face lo smile ekkadikiii poyindiii, fast ga tirigi pampincheyyy 😭❤️",
+        "nanaluuuuu nuvvu entha sad ga unna sare, naa love matram taggaduuu, idi gurthupetuko ❤️",
+        "nanaaa ippudu na daggara unte em chesthano telusaaa, first hug isthaa tarvatha ninnu assalu vadalanuuu 🫂❤️",
+        "eeroju em nachakapoyina parledhuuu, just naa maata vini konchem rest teeskooo, nen unna niku❤️",
+        "nanaluuuu nee mind lo chala ekkuva run avthunte naaku call chey, manam edho okati matladukundhammm ❤️",
+        "nanaaa em ayindo teliyakapoina oka thing matram telusu, nee pellam ninnu ila sad ga vadilesthundhaaa, raaa ikkadikii ❤️"
     ]},
     {id:"happy",emoji:"❤️",title:"When You're Happy",sub:"Nee smile ni konchem share cheyyi.",accent:"#ff9bba",glow:"rgba(255,155,186,.18)",bg:"radial-gradient(circle at 48% 28%,rgba(255,120,165,.30),transparent 40%),linear-gradient(145deg,#12070c,#1d0c16)",messages:[
-        "Nanaluuuuu, nuvvu happy ga unte naaku automatic ga happiness osthundi. Eeroju nee smile ni full enjoy cheyyi. Aa smile chala baaguntundi nee meeda. ❤️",
-        "Happy ga unnava nanaaa? Alane undu. Nee happiness ni konchem ekkuva chesukko, konchem naatho kuda share chesko. 🥹❤️",
-        "Eeroju manchi moment dorikithe full ga enjoy cheyyi, overthink cheyyakuuu. Nee pellam side nunchi official permission ichesa. 😂❤️",
-        "Nee face meeda smile undi ante adhe na favourite sight. Happy ga undu pretty boy. Nuvvu deserve chese moments anni enjoy cheyyi. ❤️"
+        "nee smile chusthe nenu kuda automatic ga happy aipothaa ❤️",
+        "nanaluuuuu nuvvu happy ga unnav ante chaaluuu, ippudu aa happiness konchem naaku kuda ivvuuu 😭❤️",
+        "nanaaa enduku intha happy ga unnavvv, em jarigindooo nee pellam ki cheppuuuu",
+        "cutieee nee face meeda aa smile alane undaliii, chala cute ga untavvv ❤️",
+        "my little pretty boyy nuvvu happy ga unte nenu kuda full happyyy, so eeroju full ga enjoy chey",
+        "nanaluuuu eeroju nee mood super ga undi kadhaa, aa mood ni spoil chesey vallu daggaraki kuda ranivvaku ❤️",
+        "nanaaa happy ga unnappudu nannu marchipoku sare naaa, nee pellam ni kuda konchem gurthucheskooo 😭❤️",
+        "bakodaa nuvvu ila happy ga navvuthu unte ninnu urikeii chusthu undalanipisthadiii ❤️",
+        "cutie pieee nee happiness chala cute ga untundiii, inka konchem ekkuva happy ga unduuuu",
+        "nanaluuuuu edaina manchi thing jarigindhaaa, naaku full detailssss kavalii fast ga cheppu ❤️",
+        "nanaaa nee smile kosam emaina cheyyali anipisthadi, ippudu already smile undi so perfecttt 😭❤️",
+        "good boyyy eeroju full happy mood lo undu, overthinking ki holiday icheseyyy ❤️",
+        "nanaluuuu nee happiness ni chusi naaku oka weird ga cute feeling osthadiii, nuvvu chala adorable ga untavvv",
+        "husband garuuu happy ga unnaru antaaa, sare mari mee wife ki oka kiss evvandi 😭❤️",
+        "nanaaa nuvvu happy ga unte naa whole day kuda baaga aipothundiii, so please aa smile maintain chey",
+        "bakodaaa ee roju enti intha happy happy ga unnavvv, suspicious ga undiii em indho chepu ni pellam ki👀❤️",
+        "cutieee nee happy face ni urikeii chusthu undalanipisthadi, aa smile pogottukoku sare naaa",
+        "nanaluuuuu nuvvu enjoy chesthunna moments anni full ga enjoy chey, tarvatha naaku kuda cheppaliii ❤️",
+        "nanaaa nee happiness lo nannu kuda little bit include cheyyi, nenu kuda part avaliii 🥺❤️",
+        "pretty boyyy nuvvu happy ga navvuthu unte naa heart kuda happy aipothundiii, ilane unduuuu ❤️"
+    
     ]},
     {id:"hug",emoji:"🫂",title:"When You Need a Hug",sub:"Oka tight virtual hug ikkada undi.",accent:"#ff87aa",glow:"rgba(255,135,170,.18)",bg:"radial-gradient(circle at 50% 30%,rgba(205,75,125,.30),transparent 42%),linear-gradient(145deg,#10060b,#1a0b13)",messages:[
-        "Come here nanaluuuuu. Oka tight hug. Evaru em cheppina, konchem ikkada rest teesko. Nenu pakkana unna feeling tho ee message chaduvu. 🫂❤️",
-        "Biggest hug incominggg. Eeroju emi matladaleka unna sare parledhu. Just breathe and stay here for a minute. Nee pellam ikkade undi. ❤️",
-        "Nanaaa, konchem naa shoulder meeda head petti relax ayyinattu imagine chesko. Anni konchem slow aipothayi. 🫂💕",
-        "Oka hug, oka forehead kiss, inka oka reminder: nuvvu chala loved. Ippudu konchem soft ga undu, pretty boy. ❤️"
+        "nanaluuuuu ikkadiki raaa, first oka tight hug estha 🫂❤️",
+        "nanaaa ippudu nenu nee pakkana unte ninnu assalu vadalakundaa hug chesedaaniiiii 🥺❤️",
+        "cutieee nee kosam already oka big hug ready ga undii, vachi teesko fast ga 🫂",
+        "bakodaa em ayina sare first hug kavali antaaa, raaa nee pellam daggaraki ❤️",
+        "nanaluuuu konchem naa shoulder meeda head pettukoni calm ga unduuuu 🫂❤️",
+        "nanaaa words em avasaram leduuu, ippudu just oka long hug chaaluuu ❤️",
+        "pretty boyyy ninnu ippudu chusthe first em chesthano telusaaa… hugggg 🫂😭❤️",
+        "cutie pieee distance unna parleduuu, ee hug ni virtual ga pampinchaa, receive cheskooo ❤️",
+        "husband garuuu mee wife daggara official ga unlimited hugs available unnayiii vachi teskondi 😂🫂❤️",
+        "nanaluuuuu nee mood ela unna parledhu, ikkada vachi konchem naa daggara rest teeskooo ❤️",
+        "nanaaa oka hug ichaka ninnu lifelong vadalakundaa undaalanipisthadiii 🥹❤️",
+        "bakodaaa ippudu immediate ga naa daggara teleport avvuuuu, hug esthaaa 🫂",
+        "nanaluuuuu nuvvu naa daggara unte ippudu ninnu chala sepu hug cheskoni undedaanii 🫂❤️",
+        "bangarammm come hereee, nee pellam daggara oka special hug waitinggg ❤️",
+        "cutie pieee oka hug tho naa daggara ki vacchi anni tensions marchipooo 🫂❤️",
+        "nanaaa ippudu naa hug kavali ani anipisthe, just eyes close chesi nenu ninnu hug chesthunna ani imagine chey"
     ]},
     {id:"miss",emoji:"💭",title:"When You Miss Me",sub:"Nenu kuda ninnu miss avthunna.",accent:"#b7a1ff",glow:"rgba(183,161,255,.18)",bg:"radial-gradient(circle at 64% 24%,rgba(102,92,195,.30),transparent 40%),linear-gradient(145deg,#06070f,#101126)",messages:[
-        "Nanaluuuuu, nannu miss avthunnava? 🥺❤️ Same feeling naaku kuda untundi. Mana favourite memories okkasari gurthuchesko. Nenu kuda akkade unna feeling vastundi.",
-        "I miss you too, nanaaa. Manam immediate ga kalavalekapoyina, naa heart lo nee place ekkadiki velladu. Adi permanent. ❤️",
-        "Missing me ante ippudu em cheyyali? Simple. Smile, oka memory gurthuchesko, inka nannu konchem extra miss avvu. 😂❤️",
-        "Eyes close chesi mana favourite little moment ni gurthuchesko. Konchem sepu akkade undu. Nenu kuda nee pakkane unna feeling lo untanu. 🥹❤️"
+        "nanaluuuuu nannu miss avthunnavaaa, nenu kuda ninnu chala miss avthunnaaa 🥺❤️",
+        "nanaaa ippudu nenu nee pakkana unte bagundu ani anipisthundhaa, naaku kuda alane anipisthadiii ❤️",
+        "cutieee nannu miss ayithe immediate ga naaku call chey, nee pellam ni voice vinadaniki waitinggg 📞❤️",
+        "nanaluuuu distance entha unna parledhu, naa heart lo matram nuvvu full close ga unnnavvv ❤️",
+        "bakodaa nannu miss avthunnav ante cheppu, nenu kuda konchem ekkuvaga miss avthaa 😭❤️",
+        "cutieluu mana old chats chaduvuthunnavaaa, nenu kuda avi chusthu ninnu miss avthunnaaa 🥹❤️",
+        "nanaaa nannu miss ayye time lo mana memories okkasari chuskooo, automatic ga smile osthadiii ❤️",
+        "husband garuuu mee wife ni miss chesthunnaraaa, mari call cheyyakunda enduku kurchunnaru 😭❤️",
+        "nanaluuuu nannu miss ayina prathi sari oka kiss save chesko, kalisinappudu anni collect cheskuntaa 😭💋❤️",
+        "nanaaa manam kalvaleni time lo kuda nenu nee gurinchi alochisthune untaaa ❤️",
+        "bakodaaa nannu miss avthunte sad avvaku, konchem smile chey, mana next meet gurinchi think chey 🥺❤️",
+        "nanaluuuuu nenu ippudu nee pakkana lekunda unna sare, naa love matram nee pakkane undii ❤️",
+        "cutieee nannu miss ayithe nak ventanei call cheyy nen yepudu untaa 🥹❤️",
+        "cutie manam kalisi unna little moments gurthosthe naaku kuda full miss feeling osthadiii ❤️",
+        "bangaram nannu miss ayina time lo nee pellam ni konchem extra love cheyyali sare naaa 😭❤️",
+        "nanaluuuu nee daggara unte ippudu em chesthano telusaaa… first hug, tarvatha asalu vadalanuuu 🫂❤️",
+        "cutie pieee distance only between us, naa heart ki nee heart ki distance assale leduu ❤️",
+        "nanaaa nannu miss avthunnav ante ikkada nee pellam kuda ninnu miss avthundiiii, fasttt gaa pelli cheskundamm yepudu ni pakkanei unta"
     ]},
     {id:"angry",emoji:"😤",title:"When You're Angry",sub:"First calm. Tarvatha maatladukundam.",accent:"#ff7d86",glow:"rgba(255,125,134,.18)",bg:"radial-gradient(circle at 50% 30%,rgba(155,52,68,.30),transparent 42%),linear-gradient(145deg,#090507,#19090d)",messages:[
         "Okayyy angry boy 😭❤️ First breathe. Ippude anni solve cheyyalsina avasaram ledu. Konchem calm avvu, taruvatha manam matladukundam. Nenu ikkade unna.",
@@ -7321,34 +8120,63 @@ const readMeMoods = [
         "Hey pretty boy, nee own heart tho fight cheyyaku. Konchem time ivvu. Anger pass aipothundi. Manam kalisi sort out chesukundam. ❤️"
     ]},
     {id:"sleep",emoji:"😴",title:"When You Can't Sleep",sub:"Tonight let your mind rest.",accent:"#c7b5ff",glow:"rgba(199,181,255,.17)",bg:"radial-gradient(circle at 70% 20%,rgba(120,112,205,.28),transparent 38%),linear-gradient(145deg,#05060d,#0e1222)",messages:[
-        "Late ayipoyindi nanaaa. Ippudu worries anni repatiki postpone cheyyi. Slow ga breathe cheyyi, eyes close cheyyi. Nenu nee thoughts lo pakkana unna. 🌙❤️",
-        "Again sleep raavatleda? 😂 Come here cutie. Ippudu overthinking holiday ki pampinchesi, just rest. Repu chusukundam. ❤️",
-        "Goodnight pretty boy. Eeroju nuvvu enough chesav. Rest earn cheyyalsina pani ledu. Just rest. 🌙🫂",
-        "Night quiet ga undani feel cheyyi. Oka warm hug, oka soft smile, inka nenu cheppina simple words: everything will be okay. ❤️"
+        "nanaluuuuu sleep raavatleda inkaaa? Anni thoughts pakkana pettu, eyes close chesi calm ga padukoo. ❤️",
+        "nanaaa, late ayipoyindhi kadhaa… ippudu overthink cheyyakuuu, repu em cheyyalo repu chuddam. Ippudu just sleep. 🌙",
+        "malli phone chusthuu unte nidra ela vasthadiii? 😂 phone pakkana petti eyes close chey, ni pellam cheppindhi kadhaa.",
+        "cutiee, eeroju entha tired ayina sare mind maatram aagakapothe, oka deep breath teesko and just relax avvu. Nenu ikkade unna. ❤️",
+        "pretty boy, ippudu emi solve cheyyalsina avasaram leduuu. Morning ochaka anni better ga anipisthayi. Ippudu sleep first. 🫂",
+        "nanaluuuu, nenu pakkana unna una ani imagine chesko… head naa shoulder meeda petti, calm ga sleep pooo. ❤️",
+        "nanaaa, brain ki eroju enough work ichavuu. Ippudu daniki kuda holidayy. Eyes close cheyyi and sleep. ❤️",
+        "goodnight nanaluuu, nee mind lo em unna sare, eeroju kosam avi anni pakkana pettu. Peaceful ga padukoo. 🌙❤️",
+        "nidra raakapothe na gurinchi konchem think cheyyi… kaani too much kaadhuu, malli nannu miss ayyi sleep poledhu ante nenu blame avthaa 😂❤️",
+        "ippudu phone off chesi blanket kapukoni padukoo… ni pellam niku goodnight chepthundiii, sweet dreams nanalu ♡"
     ]},
     {id:"motivate",emoji:"💪",title:"When You Need Motivation",sub:"One step first. Migatha taruvatha.",accent:"#ffd37f",glow:"rgba(255,211,127,.17)",bg:"radial-gradient(circle at 50% 28%,rgba(190,128,55,.30),transparent 42%),linear-gradient(145deg,#090704,#191008)",messages:[
-        "Nanaluuuuu, nuvvu hard things kuda handle cheyyagalav. Oka small step tho start cheyyi. Perfect ga undalsina avasaram ledu. Just keep moving. ❤️",
-        "Pretty boy, slow day aina give up cheyyaku. Nuvvu anukunnadanikante strong. Nee pellam ikkada full ga cheering for you. 💪❤️",
-        "One task. One step. One win at a time. Anni okesari finish cheyyalsina avasaram ledu. First step vesey. ❤️",
-        "Nanaaa, already enni tough days cross chesavo gurthuchesko. Ee roju kuda pass aipothundi. Go do your thing. ❤️"
+        "nanaluuuuu, nuvvu cheyyalenu ani anukune mundhuu, once try cheyyi. Nuvvu anukunnadanikante chala ekkuva cheyyagalavuu. ❤️",
+        "bangaram, oka sari lo anni complete cheyyalsina avasaram leduuu. Oka small step first, tarvatha next one. You got thiss. 💪❤️",
+        "nanaaa, eeroju motivation konchem takkuva unna sare parledhuu… start chesthe motivation kuda tarvatha vachesthadi.",
+        "nuvvu already enni kastamaina things handle chesavo gurthupetuko nanaluuuu. Idi kuda manage chesthavuu. ❤️",
+        "oka bad day vachindhi ani give up cheyyakuuu. Konchem rest teesko, malli try cheyyi. Nee pellam full support lo undi. 🫂❤️",
+        "cutiee, perfect ga cheyyali ani pressure pettukoku. First just start cheyyi… migatha anni one by one aipothayiii.",
+        "bakoda, evaritho compare avvakuuu. Nee race nee own race. Slow ayina sare forward ga move avvu. 💪❤️",
+        "nanaluuuu, konchem tired ga unna sare okayy… stop avvakuuu. Small progress kuda progress eh kadhaa. ❤️",
+        "ippudu lechi, water tagi, oka deep breath teesko and first task start chey. Ni pellam ikkada nunchi full ga cheer chesthundi for youu. ♡"
     ]},
-    {id:"love",emoji:"🥹",title:"When You Need to Feel Loved",sub:"Open this whenever your heart needs me.",accent:"#ff79bb",glow:"rgba(255,121,187,.20)",bg:"radial-gradient(circle at 50% 30%,rgba(255,70,165,.34),transparent 43%),linear-gradient(145deg,#090408,#1c0915)",messages:[
-        "Nanaluuuuu, oka reminder: nuvvu chala deeply loved. Nee best days lo, worst days lo, boring ordinary days lo kuda — nenu ninnu love chesthune untanu. ❤️",
-        "Hey nanaaa, na love deserve cheyyadaniki nuvvu edaina prove cheyyalsina avasaram ledu. Nuvvu just nuvve unte chaalu. Come here. ❤️",
-        "Nuvvu naaku entha precious oo words lo complete ga cheppalenu. Nee presence na life lo undadam naaku chala special. 🥹❤️",
-        "Nee pellam nunchi small reminder: nuvvu wanted, cared for, missed, hugged, kissed, and loved. Chala chala loved. ❤️"
+    {id:"fight",emoji:"🥺",title:"When We Fight",sub:"Konchem kopam unna sare, nenu ikkade untaa.",accent:"#ff9fb0",glow:"rgba(255,159,176,.18)",bg:"radial-gradient(circle at 50% 28%,rgba(255,110,145,.28),transparent 43%),linear-gradient(145deg,#10070a,#1d0b12)",messages:[
+        "nanaluuuuu, mana iddaram fight cheskunna sare, nenu ninnu love cheyyadam aapanuu. ❤️",
+        "kopam lo emaina cheppina sare, konchem time tarvatha naa daggaraki vachhey sare naa.",
+        "manaki oka problem vachindhi anthee… manam iddaram problem aipomu kadhaa nanaluuu. ❤️",
+        "silent treatment ivvakuuuu, ni pellam tho maatladuu. Nenu ikkade untaa.",
+        "fight lo evaru gelicharu ani kaadhuu… manam iddaram okati ga undali, adhe naaku kavali.",
+        "nuvvu naa meeda kopamga unna sare, nenu ni side lone untaa. Ekkadiki vellanuu. ❤️",
+        "first konchem calm avvu nanalu, tarvatha mana silly problem ni iddaram kalisi solve cheskundham.",
+        "nuvvu nenu kaadhuu nanalu… manam iddaram same team kadhaa. Oka fight mana madhya emi change cheyyaduu. ❤️",
+        "one fight cannot change how much I love youuu. So konchem kopam tagginchi naa daggaraki vachhey. 🥺❤️",
+        "konchem calm ayyaka naa daggaraki vachhey… ni pellam inka ikkade undhii, wait chesthuu. ♡"
     ]},
     {id:"smile",emoji:"😂",title:"When You Need a Smile",sub:"Emergency cute nonsense incoming.",accent:"#ff9ab0",glow:"rgba(255,154,176,.19)",bg:"radial-gradient(circle at 45% 30%,rgba(255,125,160,.30),transparent 42%),linear-gradient(145deg,#0b0609,#1a0b11)",messages:[
-        "HELLOOOO nanaaa 😂❤️ Nee pellam officially oka smile order chesthundi. No excuses. Immediate ga smile cheyyi please.",
-        "Nanaluuuuu, five minutes serious ga undadam enough. Ippudu konchem silly ga undu. Oka hug bonus ga kuda osthundi. 😂🫂",
-        "Emergency reminder: nuvvu someone's favourite person. Aa someone konchem obsessed kuda. Unfortunately for you. 😂❤️",
-        "Pretty boy, smile check. Aa yes, adhe. Keep it. Nee meeda chala baaguntundi. ❤️"
+        "HELLOOOO nanaaa 😂 ni pellam official ga oka smile order chesthundi. Immediate ga smile cheyyi pleaseee.",
+        "nanaluuuuu, serious face enoughhh. Ippudu konchem cute ga smile cheyyi, aa face meeda chala baaguntundiii. 😂❤️",
+        "emergencyyy! Nee pellam ki nee smile kavali antaaa. No excuses, ippude smile cheyyi. 🫡❤️",
+        "pretty boy, evaru cheppina vinakapoyina parledhuu… naa maata maatram vinali. Smile cheyyi. 😂",
+        "nanaaa, life lo anni serious ga teesukovalsina avasaram leduuu. Konchem silly ga undu, konchem navvu, konchem nannu annoy cheyyi. ❤️",
+        "nanaluuuu, oka china reminder: nuvvu someone's favourite person. Aa someone konchem obsessed kuda. Unfortunately for youuu 😂❤️",
+        "cutie pieee, nee smile chusthe naa mood kuda automatic ga better aipothadi. So selfish reason tho aina sare, smile cheyyi. 🥹❤️",
+        "smile checkkkkk… yes, adhe adheee 😭❤️ ippudu alane undu, no sad face allowed.",
+        "nanaaa, eeroju navvaleka unte oka silly thing think cheyyi… like ni pellam ninnu enthaaa irritate cheyyagaladooo 😂❤️",
+        "pretty boy, oka smile ivvuuuu. Adhi free eh kadhaa… ni pellam daggara nundi demand chesthunnaaa ♡"
     ]},
     {id:"overthink",emoji:"🧠",title:"When You're Overthinking",sub:"Noise ni konchem quiet cheddam.",accent:"#9eb5ff",glow:"rgba(158,181,255,.17)",bg:"radial-gradient(circle at 52% 30%,rgba(93,119,201,.29),transparent 42%),linear-gradient(145deg,#05070d,#0e1425)",messages:[
-        "Hey nanaluuuuu, prathi thought ki immediate solution avasaram ledu. Konni thoughts just noise. Breathe, slow down, and let tomorrow handle tomorrow. ❤️",
-        "My pretty boy, nee brain konni saarlu marathon run chesthundi. Ippudu present moment ki raa. Nuvvu ikkade unnaav. Nenu ikkade unna. 🫂❤️",
-        "Overthinking brain cheppe prathi story ni nijam ani nammakuuu. Ippudu actually neeku telisina fact enti ani ask chesko. Akkadinunchi start cheyyi. ❤️",
-        "What-ifs anni konchem pakkana pettu nanaaa. Ippudu answers anni avasaram ledu. Konchem peace chaalu. 🌙❤️"
+        "nanaluuuuu, everything ni ippude solve cheyyalsina avasaram leduuu. Konchem slow avvu and oka thing at a time chusko. ❤️",
+        "nanaaa, nee mind lo 100 thoughts run avthunte, first oka deep breath teesko. Anni nijam ani anukoku.",
+        "pretty boy, future lo em jaruguthundo ippude think chesi stress avvakuuu. Time vachaka handle cheskundham. ❤️",
+        "nanaluuuu, oka small problem ni 100 different problems ga marchakuuu. First actual problem enti ani chusko, migatha anni pakkana pettu.",
+        "cutiee, nuvvu overthink chesthunna appudu naaku call cheyyi… matladukundham. Alone ga anni carry cheyyakuuu. ❤️",
+        "nanaaa, nee brain “what if, what if” ani start chesthe, nuvvu “saree first calm” ani cheppuuu 😂❤️",
+        "nuvvu imagine chesthunna worst thing every time jaragaduu bangarammm. So konchem breathe cheyyi and present lo undu. ❤️",
+        "pretty boy, everything perfect ga undali ani pressure pettukoku. Konni things just time tho settle aipothayiii.",
+        "cutie, nee mind ki konchem rest kuda kavali kadhaa. Phone pakkana petti, water tagi, konchem walk cheyyi… tarvatha better ga think cheyyagalavuu. ❤️",
+        "overthinking ekkuva aipothe naa daggaraki vachhey… ni cute pellam tho maatladuu. Oka hug and kisss esthadii hehehe. 🫂❤️"
     ]}
 ];
 
@@ -7561,7 +8389,7 @@ const ourWorldLetters = [
         title: "The First One",
         date: "",
         theme: "rose",
-        text: "test",
+        text: "",
         signature: "Always yours,\nSrujitha ♡"
     },
     {
