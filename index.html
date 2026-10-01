@@ -2184,7 +2184,7 @@ h1 {
     position: absolute;
     left: 18px;
     right: 18px;
-    bottom: 17px;
+    bottom: 64px;
     z-index: 4;
     text-align: center;
 }
@@ -2235,6 +2235,212 @@ h1 {
     color: rgba(255, 222, 237, .48);
     font-size: 12px;
     letter-spacing: .6px;
+}
+
+/* Custom letter editor */
+.letters-custom-wrap {
+    position: relative;
+    z-index: 5;
+    width: min(900px, 92vw);
+    margin: 18px auto 46px;
+    display: flex;
+    justify-content: center;
+}
+
+.letters-custom-button {
+    min-width: 210px;
+    border: 1px solid rgba(255, 151, 199, .28);
+    border-radius: 18px;
+    padding: 14px 22px;
+    background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,87,164,.06));
+    color: rgba(255,241,248,.92);
+    font-size: 13px;
+    letter-spacing: .4px;
+    cursor: pointer;
+    box-shadow: 0 18px 45px rgba(0,0,0,.25);
+    backdrop-filter: blur(12px);
+    transition: transform .25s ease, background .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.letters-custom-button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,87,164,.09));
+    border-color: rgba(255, 170, 210, .44);
+    box-shadow: 0 22px 55px rgba(0,0,0,.35), 0 0 28px rgba(255,89,164,.10);
+}
+
+.letter-slot.editable-starter .letter-slot-status {
+    cursor: default;
+}
+
+.letter-slot-actions {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.letter-slot-action {
+    border: 1px solid rgba(255, 182, 218, .22);
+    background: rgba(12, 5, 14, .42);
+    color: rgba(255, 239, 247, .92);
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: transform .22s ease, background .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.letter-slot-action:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 120, 184, .12);
+    border-color: rgba(255, 182, 218, .42);
+    box-shadow: 0 8px 20px rgba(255, 70, 160, .10);
+}
+
+.letter-slot-action.edit {
+    color: #ffd7e8;
+}
+
+.letter-slot-action.open {
+    color: #fff5fa;
+}
+
+.letters-editor {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(3, 0, 7, .72);
+    backdrop-filter: blur(16px);
+}
+
+.letters-editor.hidden { display: none; }
+
+.letters-editor-panel {
+    width: min(720px, 94vw);
+    max-height: min(88vh, 820px);
+    overflow-y: auto;
+    border: 1px solid rgba(255, 160, 207, .18);
+    border-radius: 28px;
+    padding: 28px;
+    background: linear-gradient(145deg, rgba(28, 7, 18, .95), rgba(10, 4, 12, .96));
+    box-shadow: 0 32px 100px rgba(0,0,0,.58), 0 0 50px rgba(255, 70, 160, .09);
+}
+
+.letters-editor-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.letters-editor-head h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.letters-editor-close {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.13);
+    background: rgba(255,255,255,.05);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.letters-editor-label {
+    display: block;
+    margin: 14px 0 7px;
+    color: rgba(255, 220, 235, .64);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.letters-editor-input,
+.letters-editor-textarea,
+.letters-editor-select {
+    width: 100%;
+    border: 1px solid rgba(255, 178, 215, .13);
+    border-radius: 14px;
+    padding: 13px 14px;
+    outline: none;
+    background: rgba(255,255,255,.045);
+    color: rgba(255,245,250,.94);
+    font: inherit;
+}
+
+.letters-editor-textarea {
+    min-height: 230px;
+    resize: vertical;
+    line-height: 1.65;
+}
+
+.letters-editor-input:focus,
+.letters-editor-textarea:focus,
+.letters-editor-select:focus {
+    border-color: rgba(255, 151, 199, .38);
+    box-shadow: 0 0 0 3px rgba(255, 96, 171, .08);
+}
+
+.letters-editor-select option { background: #160911; color: white; }
+
+.letters-editor-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.letters-editor-action {
+    border: 1px solid rgba(255, 170, 210, .18);
+    border-radius: 14px;
+    padding: 12px 18px;
+    background: rgba(255,255,255,.05);
+    color: white;
+    cursor: pointer;
+}
+
+.letters-editor-action.primary {
+    background: linear-gradient(145deg, rgba(255, 108, 178, .22), rgba(181, 45, 99, .20));
+    border-color: rgba(255, 160, 207, .32);
+}
+
+.letters-editor-action.danger {
+    color: #ffb4c9;
+}
+
+.letters-editor-note {
+    margin-top: 10px;
+    color: rgba(255, 221, 235, .43);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+@media(max-width:700px){
+    .letters-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .letters-editor { padding: 12px; }
+    .letters-editor-panel { padding: 20px; border-radius: 22px; }
+}
+
+@media(max-width:430px){
+    .letters-grid { grid-template-columns: 1fr; }
+    .letter-slot { min-height: 215px; }
 }
 
 /* Reader */
@@ -3897,11 +4103,11 @@ button, input, textarea, select { max-width: 100%; }
                     <span></span><span></span><span></span><span>1</span><span>2</span><span>3</span><span>4</span>
                     <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
                     <span>12</span><span>13</span><span>14</span><span>15</span>
-                    <button class="ourdates-day special claim" type="button" onclick="openOurDateScene('claim')"><b>16</b><i>💍</i></button>
+                    <button class="ourdates-day special claim" type="button" ><b>16</b><i>💍</i></button>
                     <span>17</span><span>18</span><span>19</span>
                     <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
                     <span>27</span><span>28</span><span>29</span>
-                    <button class="ourdates-day special meet" type="button" onclick="openOurDateScene('meet')"><b>30</b><i>👀</i></button>
+                    <button class="ourdates-day special meet" type="button" ><b>30</b><i>👀</i></button>
                     <span></span><span></span>
                 </div>
             </div>
@@ -3911,13 +4117,13 @@ button, input, textarea, select { max-width: 100%; }
                 <div class="ourdates-weekdays"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
                 <div class="ourdates-grid">
                     <span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
-                    <button class="ourdates-day special mybirthday" type="button" onclick="openOurDateScene('mybirthday')"><b>6</b><i>🎂</i></button>
+                    <button class="ourdates-day special mybirthday" type="button" ><b>6</b><i>🎂</i></button>
                     <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
                     <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
-                    <button class="ourdates-day special kiss" type="button" onclick="openOurDateScene('kiss')"><b>19</b><i>💋</i></button>
+                    <button class="ourdates-day special kiss" type="button" ><b>19</b><i>💋</i></button>
                     <span>20</span>
                     <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
-                    <button class="ourdates-day special hug" type="button" onclick="openOurDateScene('hug')"><b>27</b><i>🫂</i></button>
+                    <button class="ourdates-day special hug" type="button" ><b>27</b><i>🫂</i></button>
                     <span>28</span><span>29</span><span>30</span><span></span><span></span><span></span><span></span>
                 </div>
             </div>
@@ -3927,7 +4133,7 @@ button, input, textarea, select { max-width: 100%; }
                 <div class="ourdates-weekdays"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
                 <div class="ourdates-grid">
                     <span></span><span></span><span></span>
-                    <button class="ourdates-day special hisbirthday" type="button" onclick="openOurDateScene('hisbirthday')"><b>1</b><i>🎂</i></button>
+                    <button class="ourdates-day special hisbirthday" type="button" ><b>1</b><i>🎂</i></button>
                     <span>2</span><span>3</span><span>4</span>
                     <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
                     <span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
@@ -4959,6 +5165,7 @@ document.addEventListener('keydown',function(event){
                 </label>
 
                 <div class="ourfuture-composer-actions">
+                    <button type="button" class="ourfuture-remove-edit-btn hidden" id="ourFutureComposerRemoveBtn" onclick="deleteEditingOurFutureDream()">Remove Dream</button>
                     <button type="button" class="ourfuture-cancel-btn" onclick="closeOurFutureComposer()">Cancel</button>
                     <button type="button" class="ourfuture-save-btn" id="ourFutureSaveBtn" onclick="saveOurFutureDream()">Save Dream ♡</button>
                 </div>
@@ -5012,6 +5219,8 @@ document.addEventListener('keydown',function(event){
 .ourfuture-card-emoji{font-size:25px;margin-bottom:12px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.2))}
 .ourfuture-card-title{font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:600;letter-spacing:-.2px;color:#fff4f7}
 .ourfuture-card-text{margin-top:9px;font-family:Caveat,'Segoe Print',cursive;font-size:18px;line-height:1.28;color:rgba(255,222,232,.9)}
+.ourfuture-card-actions{position:absolute;left:17px;right:17px;bottom:13px;display:flex;align-items:center;justify-content:flex-end;gap:8px;z-index:5}
+.ourfuture-card-actions .ourfuture-card-arrow{position:static}
 .ourfuture-card-arrow{position:absolute;right:17px;bottom:15px;font-size:16px;color:rgba(255,207,222,.7);transition:transform .25s ease}
 .ourfuture-card:hover .ourfuture-card-arrow{transform:translateX(4px)}
 .ourfuture-card.custom{background:linear-gradient(145deg,rgba(126,33,69,.34),rgba(59,17,43,.36))}
@@ -5033,6 +5242,8 @@ document.addEventListener('keydown',function(event){
 .ourfuture-detail-actions{display:flex;gap:9px;margin-top:30px}
 .ourfuture-edit-btn,.ourfuture-delete-btn{border:1px solid rgba(255,230,240,.16);background:rgba(255,255,255,.05);color:#fff;border-radius:999px;padding:9px 14px;font-size:10px;font-weight:800;cursor:pointer}
 .ourfuture-delete-btn{background:rgba(96,10,35,.32);color:#ffdce7}
+.ourfuture-remove-edit-btn{border:1px solid rgba(255,150,180,.24);background:rgba(92,9,35,.34);color:#ffdbe7;border-radius:999px;padding:11px 15px;font-size:10px;font-weight:800;cursor:pointer}
+.ourfuture-remove-edit-btn:hover{background:rgba(132,14,52,.46);border-color:rgba(255,185,205,.38)}
 .ourfuture-composer-wrap{position:relative;z-index:3;min-height:78vh;display:flex;align-items:center;justify-content:center;padding:25px 0 55px}
 .ourfuture-composer-card{width:min(680px,100%);border:1px solid rgba(255,224,235,.15);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(66,10,34,.35));border-radius:30px;padding:30px 22px 24px;box-shadow:0 25px 70px rgba(0,0,0,.3);backdrop-filter:blur(18px)}
 .ourfuture-composer-kicker{font-size:8px;letter-spacing:2.4px;font-weight:900;color:rgba(255,216,228,.5)}
@@ -5057,7 +5268,7 @@ document.addEventListener('keydown',function(event){
 .ourfuture-cancel-btn{border:1px solid rgba(255,226,236,.13);background:rgba(255,255,255,.045);color:#fff}
 .ourfuture-save-btn{border:1px solid rgba(255,188,211,.25);background:linear-gradient(135deg,#a61e48,#6d0d30);color:#fff4f8;box-shadow:0 10px 26px rgba(106,8,43,.28)}
 @media(max-width:720px){.ourfuture-topbar{grid-template-columns:auto 1fr auto}.ourfuture-brand{display:none}.ourfuture-grid{grid-template-columns:1fr;gap:13px}.ourfuture-card,.ourfuture-card:nth-child(2n),.ourfuture-card:nth-child(2n+1){min-height:188px;transform:none}.ourfuture-card-title{font-size:21px}.ourfuture-card-text{font-size:17px}.ourfuture-dream-center{min-height:68vh;margin-top:3vh}.ourfuture-composer-wrap{min-height:73vh}.ourfuture-composer-card{padding:24px 17px 19px}.ourfuture-detail-topbar{grid-template-columns:auto 1fr}.ourfuture-detail-mini{text-align:right}.ourfuture-add-top{padding:9px 11px}}
-@media(max-width:420px){.ourfuture-topbar{padding-top:12px}.ourfuture-back,.ourfuture-add-top{font-size:10px;padding:8px 10px}.ourfuture-header{margin-top:20px}.ourfuture-card{padding:18px 16px;min-height:176px}.ourfuture-card-emoji{font-size:23px;margin-bottom:9px}.ourfuture-card-title{font-size:20px}.ourfuture-card-text{font-size:16px}.ourfuture-footer{font-size:15px}.ourfuture-dream-center h2{font-size:35px}.ourfuture-dream-center p{font-size:25px}.ourfuture-detail-actions{margin-top:22px}.ourfuture-composer-card h2{font-size:30px}}
+@media(max-width:420px){.ourfuture-topbar{padding-top:12px}.ourfuture-back,.ourfuture-add-top{font-size:10px;padding:8px 10px}.ourfuture-header{margin-top:20px}.ourfuture-card{padding:18px 16px 48px;min-height:176px}.ourfuture-card-emoji{font-size:23px;margin-bottom:9px}.ourfuture-card-title{font-size:20px}.ourfuture-card-text{font-size:16px}.ourfuture-footer{font-size:15px}.ourfuture-dream-center h2{font-size:35px}.ourfuture-dream-center p{font-size:25px}.ourfuture-detail-actions{margin-top:22px}.ourfuture-composer-card h2{font-size:30px}}
 </style>
 
 <script id="ourFutureScript">
@@ -5072,20 +5283,14 @@ let currentOurFutureEmoji='✦';
 
 const OUR_FUTURE_EMOJIS=['🏠','✈️','🌍','🌅','❤️','😂','💍','🫶','🥹','☕','🌸','✨','🌙','🧳','📸','🎓','💫','🌻','🐚','🎵','🤍','♾️','🌿','✦'];
 
-const OUR_FUTURE_DEFAULTS=[
-    {id:'dream-home',emoji:'🏠',title:'A place of our own',text:'Oka roju mana iddaram mana own little place lo, mana rules tho, mana navvulatho life ni build cheskovali ani nenu dream chestha.'},
-    {id:'dream-world',emoji:'✈️',title:'Seeing the world with you',text:'New places chudali, random streets lo tiragali, food try cheyyali… prathi place ni neetho oka memory ga marchukovali.'},
-    {id:'dream-days',emoji:'🌅',title:'Ordinary days',text:'Big moments kanna, netho kalisi simple mornings, late-night talks, silly fights, chai moments… ave na favorite future memories.'},
-    {id:'dream-grow',emoji:'❤️',title:'Growing together',text:'Mana dreams change ayina parledhu. Manam kalisi grow avvali, okariki okaram support ga undali, every version of us ni love cheskovali.'},
-    {id:'dream-annoy',emoji:'😂',title:'Still annoying you',text:'Years pass ayina, ninnu tease cheyyadam, irritate cheyyadam, tarvatha cute ga convince cheyyadam… idi lifelong plan.'}
-];
+const OUR_FUTURE_DEFAULTS=[];
 
 function loadOurWorldFuture(){
     try{
         const saved=JSON.parse(localStorage.getItem(OUR_WORLD_FUTURE_KEY)||'null');
-        if(Array.isArray(saved)&&saved.length) return saved;
+        if(Array.isArray(saved)) return saved.filter(item=>!item?.locked);
     }catch(e){}
-    return OUR_FUTURE_DEFAULTS.map(item=>({...item,locked:true}));
+    return [];
 }
 function saveOurWorldFuture(){try{localStorage.setItem(OUR_WORLD_FUTURE_KEY,JSON.stringify(ourWorldFutureDreams));}catch(e){}}
 
@@ -5152,18 +5357,33 @@ function renderOurFuture(){
     if(!grid||!empty)return;
     grid.innerHTML='';
     empty.classList.toggle('hidden',ourWorldFutureDreams.length>0);
+
     ourWorldFutureDreams.forEach((dream,index)=>{
-        const card=document.createElement('button');
-        card.type='button';
+        const card=document.createElement('div');
         card.className='ourfuture-card'+(dream.locked?'':' custom');
-        card.onclick=()=>openOurFutureDream(dream.id);
+        card.setAttribute('role','button');
+        card.setAttribute('tabindex','0');
+        card.setAttribute('aria-label','Open '+(dream.title||'Our Future dream'));
+
         card.innerHTML=`
             <div class="ourfuture-card-shine"></div>
             <div class="ourfuture-card-index">DREAM ${String(index+1).padStart(2,'0')}</div>
             <div class="ourfuture-card-emoji">${dream.emoji||'♡'}</div>
             <div class="ourfuture-card-title">${escapeOurFutureHtml(dream.title)}</div>
             <div class="ourfuture-card-text">${escapeOurFutureHtml(dream.text)}</div>
-            <div class="ourfuture-card-arrow">→</div>`;
+            <div class="ourfuture-card-actions">
+                <span class="ourfuture-card-arrow" aria-hidden="true">→</span>
+            </div>`;
+
+        card.addEventListener('click',function(){ openOurFutureDream(dream.id); });
+        card.addEventListener('keydown',function(event){
+            if(event.key==='Enter' || event.key===' '){
+                event.preventDefault();
+                openOurFutureDream(dream.id);
+            }
+        });
+
+
         grid.appendChild(card);
     });
 }
@@ -5243,22 +5463,28 @@ function openOurFutureComposer(editId=null){
     const title=document.getElementById('ourFutureTitleInput');
     const text=document.getElementById('ourFutureTextInput');
     const saveBtn=document.getElementById('ourFutureSaveBtn');
-    if(!home||!dream||!composer||!heading||!title||!text||!saveBtn)return;
+    const removeBtn=document.getElementById('ourFutureComposerRemoveBtn');
+    if(!home||!dream||!composer||!heading||!title||!text||!saveBtn||!removeBtn)return;
     currentOurFutureEditId=editId;
     if(editId){
-        const item=ourWorldFutureDreams[futureDreamIndex(editId)];
+        const index=futureDreamIndex(editId);
+        const item=index>=0?ourWorldFutureDreams[index]:null;
         if(!item)return;
         heading.textContent='Edit Dream';
         title.value=item.title||'';
         text.value=item.text||'';
         selectOurFutureEmoji(item.emoji||'✦');
         saveBtn.textContent='Save Changes ♡';
+        removeBtn.classList.remove('hidden');
+        removeBtn.setAttribute('aria-hidden','false');
     }else{
         heading.textContent='Add a Dream';
         title.value='';
         text.value='';
         selectOurFutureEmoji('✦');
         saveBtn.textContent='Save Dream ♡';
+        removeBtn.classList.add('hidden');
+        removeBtn.setAttribute('aria-hidden','true');
     }
     home.classList.add('hidden');
     dream.classList.add('hidden');
@@ -5270,12 +5496,20 @@ function openOurFutureComposer(editId=null){
 function closeOurFutureComposer(){
     const composer=document.getElementById('ourFutureComposerView');
     if(!composer)return;
+    const removeBtn=document.getElementById('ourFutureComposerRemoveBtn');
+    if(removeBtn){removeBtn.classList.add('hidden');removeBtn.setAttribute('aria-hidden','true');}
     composer.classList.add('hidden');
     composer.setAttribute('aria-hidden','true');
     currentOurFutureEditId=null;
     const home=document.getElementById('ourFutureHomeView');
     if(home){home.classList.remove('hidden');renderOurFuture();}
     window.scrollTo(0,0);
+}
+
+function deleteEditingOurFutureDream(){
+    const id=currentOurFutureEditId;
+    if(!id)return;
+    deleteOurFutureDream(id);
 }
 
 function saveOurFutureDream(){
@@ -5309,10 +5543,19 @@ function editOurFutureDream(id){openOurFutureComposer(id)}
 function deleteOurFutureDream(id){
     const index=futureDreamIndex(id);
     if(index<0)return;
-    if(!confirm('Remove this dream from Our Future?'))return;
     ourWorldFutureDreams.splice(index,1);
     saveOurWorldFuture();
-    backToOurFutureHome();
+    currentOurFutureDreamId=null;
+    currentOurFutureEditId=null;
+    const composer=document.getElementById('ourFutureComposerView');
+    const removeBtn=document.getElementById('ourFutureComposerRemoveBtn');
+    if(composer){composer.classList.add('hidden');composer.setAttribute('aria-hidden','true');}
+    if(removeBtn){removeBtn.classList.add('hidden');removeBtn.setAttribute('aria-hidden','true');}
+    const dream=document.getElementById('ourFutureDreamView');
+    const home=document.getElementById('ourFutureHomeView');
+    if(dream){dream.classList.add('hidden');dream.setAttribute('aria-hidden','true');}
+    if(home){home.classList.remove('hidden');renderOurFuture();}
+    window.scrollTo(0,0);
 }
 
 document.addEventListener('keydown',function(event){
@@ -7146,7 +7389,7 @@ if (
         <div class="letters-topbar">
             <button class="letters-nav-button" type="button" onclick="closeLetters()">← Back to Our World</button>
             <div class="letters-topbar-center">OUR PRIVATE LITTLE CORNER ♡</div>
-            <div class="letters-count" id="lettersCount">0 / 12 unlocked</div>
+            <div class="letters-count" id="lettersCount">0 / 1 unlocked</div>
         </div>
 
         <div class="letters-heading-wrap">
@@ -7156,6 +7399,10 @@ if (
         </div>
 
         <div class="letters-grid" id="lettersGrid"></div>
+
+        <div class="letters-custom-wrap">
+            <button class="letters-custom-button" type="button" onclick="openCustomLetterEditor()">＋ Write a Custom Letter ♡</button>
+        </div>
     </section>
 
     <!-- FULL-SCREEN READER -->
@@ -7193,6 +7440,52 @@ if (
             </div>
         </div>
     </section>
+
+    <!-- CUSTOM LETTER EDITOR -->
+    <div id="lettersEditor" class="letters-editor hidden" aria-hidden="true">
+        <div class="letters-editor-panel" role="dialog" aria-modal="true" aria-labelledby="lettersEditorTitle">
+            <div class="letters-editor-head">
+                <h3 id="lettersEditorTitle">Write a Letter ♡</h3>
+                <button class="letters-editor-close" type="button" onclick="closeCustomLetterEditor()" aria-label="Close">×</button>
+            </div>
+
+            <label class="letters-editor-label" for="customLetterTitle">Title</label>
+            <input class="letters-editor-input" id="customLetterTitle" type="text" maxlength="80" placeholder="give your letter a little title">
+
+            <label class="letters-editor-label" for="customLetterDate">Date (optional)</label>
+            <input class="letters-editor-input" id="customLetterDate" type="text" maxlength="60" placeholder="e.g. 1 October 2026">
+
+            <label class="letters-editor-label" for="customLetterTheme">Theme</label>
+            <select class="letters-editor-select" id="customLetterTheme">
+                <option value="rose">Rose</option>
+                <option value="red">Red</option>
+                <option value="berry">Berry</option>
+                <option value="pink">Pink</option>
+                <option value="midnight">Midnight</option>
+                <option value="coral">Coral</option>
+                <option value="violet">Violet</option>
+                <option value="wine">Wine</option>
+                <option value="plum">Plum</option>
+                <option value="blush">Blush</option>
+                <option value="crimson">Crimson</option>
+                <option value="petal">Petal</option>
+            </select>
+
+            <label class="letters-editor-label" for="customLetterText">Your letter</label>
+            <textarea class="letters-editor-textarea" id="customLetterText" placeholder="write everything you want to tell him..."></textarea>
+
+            <label class="letters-editor-label" for="customLetterSignature">Signature</label>
+            <textarea class="letters-editor-textarea" id="customLetterSignature" style="min-height:100px" placeholder="Always yours,
+Srujitha ♡"></textarea>
+
+            <div class="letters-editor-actions">
+                <button class="letters-editor-action danger" id="customLetterDelete" type="button" onclick="deleteEditingCustomLetter()">Delete</button>
+                <button class="letters-editor-action" type="button" onclick="closeCustomLetterEditor()">Cancel</button>
+                <button class="letters-editor-action primary" type="button" onclick="saveCustomLetter()">Save Letter ♡</button>
+            </div>
+            <div class="letters-editor-note">Your custom letters are saved in this browser, so you can write and edit them without opening VS Code.</div>
+        </div>
+    </div>
 </section>
 
 <!-- =========================================================
@@ -8113,13 +8406,13 @@ const readMeMoods = [
         "cutie pieee distance only between us, naa heart ki nee heart ki distance assale leduu ❤️",
         "nanaaa nannu miss avthunnav ante ikkada nee pellam kuda ninnu miss avthundiiii, fasttt gaa pelli cheskundamm yepudu ni pakkanei unta"
     ]},
-    {id:"angry",emoji:"😤",title:"When You're Angry",sub:"First calm. Tarvatha maatladukundam.",accent:"#ff7d86",glow:"rgba(255,125,134,.18)",bg:"radial-gradient(circle at 50% 30%,rgba(155,52,68,.30),transparent 42%),linear-gradient(145deg,#090507,#19090d)",messages:[
+    {id:"angry",emoji:"😤",title:"When You're Angry",sub:"First calm avu Tarvatha maatladukundam.",accent:"#ff7d86",glow:"rgba(255,125,134,.18)",bg:"radial-gradient(circle at 50% 30%,rgba(155,52,68,.30),transparent 42%),linear-gradient(145deg,#090507,#19090d)",messages:[
         "Okayyy angry boy 😭❤️ First breathe. Ippude anni solve cheyyalsina avasaram ledu. Konchem calm avvu, taruvatha manam matladukundam. Nenu ikkade unna.",
         "Nana, feelings loud ga unna appudu konchem phone pakkana pettu. Water tagu, slow ga breathe cheyyi. Storm konchem taggaka manam better ga understand chesukundam. ❤️",
         "Nuvvu angry ga unna kuda, naa care ekkadiki podhu. Konchem space teesko. Ready ayyaka malli raa. 🤍",
         "Hey pretty boy, nee own heart tho fight cheyyaku. Konchem time ivvu. Anger pass aipothundi. Manam kalisi sort out chesukundam. ❤️"
     ]},
-    {id:"sleep",emoji:"😴",title:"When You Can't Sleep",sub:"Tonight let your mind rest.",accent:"#c7b5ff",glow:"rgba(199,181,255,.17)",bg:"radial-gradient(circle at 70% 20%,rgba(120,112,205,.28),transparent 38%),linear-gradient(145deg,#05060d,#0e1222)",messages:[
+    {id:"sleep",emoji:"😴",title:"When You Can't Sleep",sub:"em iendhi nanaluu.",accent:"#c7b5ff",glow:"rgba(199,181,255,.17)",bg:"radial-gradient(circle at 70% 20%,rgba(120,112,205,.28),transparent 38%),linear-gradient(145deg,#05060d,#0e1222)",messages:[
         "nanaluuuuu sleep raavatleda inkaaa? Anni thoughts pakkana pettu, eyes close chesi calm ga padukoo. ❤️",
         "nanaaa, late ayipoyindhi kadhaa… ippudu overthink cheyyakuuu, repu em cheyyalo repu chuddam. Ippudu just sleep. 🌙",
         "malli phone chusthuu unte nidra ela vasthadiii? 😂 phone pakkana petti eyes close chey, ni pellam cheppindhi kadhaa.",
@@ -8131,7 +8424,7 @@ const readMeMoods = [
         "nidra raakapothe na gurinchi konchem think cheyyi… kaani too much kaadhuu, malli nannu miss ayyi sleep poledhu ante nenu blame avthaa 😂❤️",
         "ippudu phone off chesi blanket kapukoni padukoo… ni pellam niku goodnight chepthundiii, sweet dreams nanalu ♡"
     ]},
-    {id:"motivate",emoji:"💪",title:"When You Need Motivation",sub:"One step first. Migatha taruvatha.",accent:"#ffd37f",glow:"rgba(255,211,127,.17)",bg:"radial-gradient(circle at 50% 28%,rgba(190,128,55,.30),transparent 42%),linear-gradient(145deg,#090704,#191008)",messages:[
+    {id:"motivate",emoji:"💪",title:"When You Need Motivation",sub:"YOU CAN DO IT.",accent:"#ffd37f",glow:"rgba(255,211,127,.17)",bg:"radial-gradient(circle at 50% 28%,rgba(190,128,55,.30),transparent 42%),linear-gradient(145deg,#090704,#191008)",messages:[
         "nanaluuuuu, nuvvu cheyyalenu ani anukune mundhuu, once try cheyyi. Nuvvu anukunnadanikante chala ekkuva cheyyagalavuu. ❤️",
         "bangaram, oka sari lo anni complete cheyyalsina avasaram leduuu. Oka small step first, tarvatha next one. You got thiss. 💪❤️",
         "nanaaa, eeroju motivation konchem takkuva unna sare parledhuu… start chesthe motivation kuda tarvatha vachesthadi.",
@@ -8383,104 +8676,20 @@ document.addEventListener('keydown',function(event){
    A letter is unlocked automatically whenever its text is non-empty.
    Leave text: "" to keep that letter locked.
 ========================================================= */
-const ourWorldLetters = [
+const ourWorldLettersBase = [
     {
         id: "letter-01",
         title: "The First One",
         date: "",
         theme: "rose",
         text: "",
-        signature: "Always yours,\nSrujitha ♡"
-    },
-    {
-        id: "letter-02",
-        title: "Five Months With You",
-        date: "",
-        theme: "red",
-        text: "",
-        signature: "Love, always.\nSrujitha ♡"
-    },
-    {
-        id: "letter-03",
-        title: "Things I Never Say Enough",
-        date: "",
-        theme: "berry",
-        text: "",
-        signature: "Your pellam ♡"
-    },
-    {
-        id: "letter-04",
-        title: "For My Pretty Boy",
-        date: "",
-        theme: "pink",
-        text: "",
-        signature: "Yours, Srujitha ♡"
-    },
-    {
-        id: "letter-05",
-        title: "A Random Letter",
-        date: "",
-        theme: "midnight",
-        text: "",
-        signature: "With all my love ♡\nSrujitha"
-    },
-    {
-        id: "letter-06",
-        title: "You Make Me Smile",
-        date: "",
-        theme: "coral",
-        text: "",
-        signature: "Your favourite girl ♡"
-    },
-    {
-        id: "letter-07",
-        title: "About Us",
-        date: "",
-        theme: "violet",
-        text: "",
-        signature: "Us, always. ♡"
-    },
-    {
-        id: "letter-08",
-        title: "A Little Promise",
-        date: "",
-        theme: "wine",
-        text: "",
-        signature: "Srujitha ♡"
-    },
-    {
-        id: "letter-09",
-        title: "When I Miss You",
-        date: "",
-        theme: "plum",
-        text: "",
-        signature: "Missing you, loving you. ♡"
-    },
-    {
-        id: "letter-10",
-        title: "Just Because",
-        date: "",
-        theme: "blush",
-        text: "",
-        signature: "Just because I love you. ♡"
-    },
-    {
-        id: "letter-11",
-        title: "My Favourite Person",
-        date: "",
-        theme: "crimson",
-        text: "",
-        signature: "Always, Srujitha ♡"
-    },
-    {
-        id: "letter-12",
-        title: "One More For You",
-        date: "",
-        theme: "petal",
-        text: "",
-        signature: "Forever your Srujitha ♡"
+        signature: "Always yours,\nSrujitha ♡",
+        starter: true
     }
 ];
+
+const LETTERS_CUSTOM_KEY = "ourWorldCustomLetters";
+const LETTERS_STARTER_KEY = "ourWorldStarterLetter";
 
 const letterThemeMap = {
     rose:    { accent: "#ff8fc6", soft: "rgba(255,143,198,.10)", icon: "♡" },
@@ -8497,7 +8706,33 @@ const letterThemeMap = {
     petal:   { accent: "#ff87b8", soft: "rgba(255,135,184,.10)", icon: "♡" }
 };
 
+let ourWorldLetters = loadOurWorldLetters();
 let activeLetterIndex = -1;
+let editingLetterIndex = -1;
+let editingCustomLetterId = null;
+
+function loadOurWorldLetters() {
+    let starter = { ...ourWorldLettersBase[0] };
+    let custom = [];
+    try {
+        const savedStarter = JSON.parse(localStorage.getItem(LETTERS_STARTER_KEY) || "null");
+        if (savedStarter && typeof savedStarter === "object") {
+            starter = { ...starter, ...savedStarter, id: "letter-01", starter: true };
+        }
+        const savedCustom = JSON.parse(localStorage.getItem(LETTERS_CUSTOM_KEY) || "[]");
+        if (Array.isArray(savedCustom)) custom = savedCustom.filter(function(x){
+            return x && typeof x === "object" && typeof x.id === "string";
+        });
+    } catch (e) {}
+    return [starter].concat(custom);
+}
+
+function persistOurWorldLetters() {
+    try {
+        localStorage.setItem(LETTERS_STARTER_KEY, JSON.stringify(ourWorldLetters[0]));
+        localStorage.setItem(LETTERS_CUSTOM_KEY, JSON.stringify(ourWorldLetters.slice(1)));
+    } catch (e) {}
+}
 
 function isLetterUnlocked(letter) {
     return Boolean(letter && typeof letter.text === "string" && letter.text.trim().length > 0);
@@ -8523,6 +8758,7 @@ function openLetters() {
 
 function closeLetters() {
     resetLetterOpening();
+    closeCustomLetterEditor();
     const experience = document.getElementById("lettersExperience");
     if (!experience) return;
 
@@ -8546,44 +8782,140 @@ function renderLetterCollection() {
         if (ready) unlocked++;
 
         const theme = letterThemeMap[letter.theme] || letterThemeMap.rose;
-        const slot = document.createElement("button");
-        slot.type = "button";
+        const slot = document.createElement("div");
         slot.className = "letter-slot " + (ready ? "unlocked" : "locked");
+        if (letter.starter) slot.classList.add("editable-starter");
         slot.style.setProperty("--accent", theme.accent);
-        slot.setAttribute("aria-label", ready ? "Open " + letter.title : letter.title + " is locked");
+        slot.setAttribute("aria-label", letter.title || "Letter");
+
+        const status = ready ? "Ready to open ♡" : (letter.starter ? "Write your letter" : "Waiting for your words...");
 
         slot.innerHTML = `
             <div class="envelope-art">
                 <div class="envelope-flap"></div>
                 <div class="envelope-heart">${theme.icon}</div>
             </div>
-            ${ready ? "" : '<div class="lock-badge">🔒</div>'}
+            ${letter.starter ? '' : '<div class="lock-badge">✦</div>'}
+            <div class="letter-slot-actions">
+                ${ready ? '<button class="letter-slot-action open" type="button">Open ♡</button>' : ''}
+                <button class="letter-slot-action edit" type="button">Edit ✎</button>
+            </div>
             <div class="letter-slot-content">
                 <div class="letter-slot-number">LETTER ${String(index + 1).padStart(2, "0")}</div>
-                <div class="letter-slot-title">${escapeLettersHtml(letter.title)}</div>
-                <div class="letter-slot-status">${ready ? "Open ♡" : "Waiting for your words..."}</div>
+                <div class="letter-slot-title">${escapeLettersHtml(letter.title || "Custom Letter")}</div>
+                <div class="letter-slot-status">${status}</div>
             </div>
         `;
 
-        if (ready) {
-            slot.addEventListener("click", function() {
+        const openButton = slot.querySelector(".letter-slot-action.open");
+        if (openButton) {
+            openButton.addEventListener("click", function(event) {
+                event.stopPropagation();
                 openLetterReader(index);
             });
         }
 
+        const editButton = slot.querySelector(".letter-slot-action.edit");
+        if (editButton) {
+            editButton.addEventListener("click", function(event) {
+                event.stopPropagation();
+                openLetterEditorForIndex(index);
+            });
+        }
+
+        /* Keep the whole card usable: an unlocked card opens, while Edit remains permanently visible. */
+        slot.addEventListener("click", function(event) {
+            if (event.target.closest(".letter-slot-actions")) return;
+            if (ready) openLetterReader(index);
+            else openLetterEditorForIndex(index);
+        });
+
         grid.appendChild(slot);
     });
-
-    if (!ourWorldLetters.length) {
-        const empty = document.createElement("div");
-        empty.className = "letters-empty-note";
-        empty.textContent = "Your letters will live here ♡";
-        grid.appendChild(empty);
-    }
 
     if (count) {
         count.textContent = unlocked + " / " + ourWorldLetters.length + " unlocked";
     }
+}
+
+function openCustomLetterEditor() {
+    editingLetterIndex = -1;
+    editingCustomLetterId = "custom-" + Date.now() + "-" + Math.random().toString(36).slice(2,8);
+    fillCustomLetterEditor({
+        id: editingCustomLetterId,
+        title: "",
+        date: "",
+        theme: "rose",
+        text: "",
+        signature: "Always yours,\nSrujitha ♡",
+        starter: false
+    });
+}
+
+function openLetterEditorForIndex(index) {
+    const letter = ourWorldLetters[index];
+    if (!letter) return;
+    editingLetterIndex = index;
+    editingCustomLetterId = letter.id;
+    fillCustomLetterEditor(letter);
+}
+
+function fillCustomLetterEditor(letter) {
+    const editor = document.getElementById("lettersEditor");
+    if (!editor) return;
+    document.getElementById("lettersEditorTitle").textContent = letter.starter ? "Write The First One ♡" : (letter.id ? "Write a Letter ♡" : "Write a Letter ♡");
+    document.getElementById("customLetterTitle").value = letter.title || "";
+    document.getElementById("customLetterDate").value = letter.date || "";
+    document.getElementById("customLetterTheme").value = letter.theme || "rose";
+    document.getElementById("customLetterText").value = letter.text || "";
+    document.getElementById("customLetterSignature").value = letter.signature || "";
+    const del = document.getElementById("customLetterDelete");
+    if (del) del.style.display = letter.starter ? "none" : (editingLetterIndex > 0 ? "inline-block" : "none");
+    editor.classList.remove("hidden");
+    editor.setAttribute("aria-hidden", "false");
+}
+
+function closeCustomLetterEditor() {
+    const editor = document.getElementById("lettersEditor");
+    if (!editor) return;
+    editor.classList.add("hidden");
+    editor.setAttribute("aria-hidden", "true");
+    editingLetterIndex = -1;
+    editingCustomLetterId = null;
+}
+
+function saveCustomLetter() {
+    const title = document.getElementById("customLetterTitle").value.trim();
+    const date = document.getElementById("customLetterDate").value.trim();
+    const theme = document.getElementById("customLetterTheme").value || "rose";
+    const text = document.getElementById("customLetterText").value.trim();
+    const signature = document.getElementById("customLetterSignature").value.trim();
+    if (!title || !text) {
+        alert("Add a title and write your letter first ♡");
+        return;
+    }
+
+    if (editingLetterIndex === 0) {
+        ourWorldLetters[0] = { ...ourWorldLetters[0], title, date, theme, text, signature };
+    } else {
+        const id = editingCustomLetterId || ("custom-" + Date.now());
+        const obj = { id, title, date, theme, text, signature, starter: false };
+        const existingIndex = ourWorldLetters.findIndex(function(x){ return x.id === id; });
+        if (existingIndex > 0) ourWorldLetters[existingIndex] = obj;
+        else ourWorldLetters.push(obj);
+    }
+
+    persistOurWorldLetters();
+    closeCustomLetterEditor();
+    renderLetterCollection();
+}
+
+function deleteEditingCustomLetter() {
+    if (editingLetterIndex <= 0) return;
+    ourWorldLetters.splice(editingLetterIndex, 1);
+    persistOurWorldLetters();
+    closeCustomLetterEditor();
+    renderLetterCollection();
 }
 
 let letterOpeningTimer1 = null;
